@@ -5,6 +5,7 @@
  */
 package hogwarts;
 
+import byui.CIT260.Hogwarts.model.Player;
 
 
 /**
@@ -19,7 +20,8 @@ public class Hogwarts  {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
+        Player playerOne = new Player();
+        
     }
     
 }
