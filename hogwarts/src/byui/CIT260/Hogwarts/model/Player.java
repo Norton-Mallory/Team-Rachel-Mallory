@@ -57,6 +57,7 @@ public class Player implements Serializable{
         if (this == obj) {
             return true;
         }
+        
         if (obj == null) {
             return false;
         }
