@@ -9,6 +9,7 @@ import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
+import byui.CIT260.Hogwarts.model.Tools;
 
 /**
  *
@@ -54,6 +55,11 @@ public class Hogwarts {
         
         System.out.println(itemOne);
         
+        Tools toolBroom = new Tools();
+        
+        toolBroom.setFunction("This will enable you to fly around");
+        
+        System.out.println(toolBroom);
     }
     
 }
