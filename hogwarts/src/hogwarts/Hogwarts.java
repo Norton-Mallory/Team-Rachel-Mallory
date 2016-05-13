@@ -6,6 +6,7 @@
 package hogwarts;
 
 import byui.CIT260.Hogwarts.model.Game;
+import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
 
@@ -36,6 +37,7 @@ public class Hogwarts {
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
         
+        
         Map mapOne = new Map();
         
         mapOne.setName("library");
@@ -43,6 +45,14 @@ public class Hogwarts {
         mapOne.setNumberOfRows(2);
         
         System.out.println(mapOne);
+        
+        Item itemOne = new Item();
+        
+        itemOne.setInventoryType("Broomstick");
+        itemOne.setQuantityInStock(1);
+        itemOne.setRequiredAmount(1);
+        
+        System.out.println(itemOne);
         
     }
     
