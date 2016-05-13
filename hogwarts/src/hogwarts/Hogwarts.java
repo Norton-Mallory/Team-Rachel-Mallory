@@ -9,6 +9,8 @@ import byui.CIT260.Hogwarts.model.House;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Player;
 import byui.CIT260.Hogwarts.model.Character;
+import byui.CIT260.Hogwarts.model.Scene;
+import byui.CIT260.Hogwarts.model.Location;
 /**
  *
  * @author Mallory
@@ -54,6 +56,29 @@ public class Hogwarts {
         
         String characterInfo = characterOne.toString();
         System.out.println(characterInfo);
+        
+        //scene
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setDescription("The Chamber of Secrets");
+        sceneOne.setBlockedLocation("This location is blocked");
+        
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
+        
+        //location
+        Location locationOne = new Location();
+        
+        locationOne.setRow("2");
+        locationOne.setColumn("3");
+        locationOne.setVisited("Visited");
+        locationOne.setAmountRemaining(8);
+        locationOne.setCoins("This location has 1 coin");
+        locationOne.setType("Wand");
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+    
     }
     
 }
