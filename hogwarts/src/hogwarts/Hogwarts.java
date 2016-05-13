@@ -45,7 +45,8 @@ public class Hogwarts {
         mapOne.setNumberOfColumns(3);
         mapOne.setNumberOfRows(2);
         
-        System.out.println(mapOne);
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
         
         Item itemOne = new Item();
         
@@ -53,12 +54,14 @@ public class Hogwarts {
         itemOne.setQuantityInStock(1);
         itemOne.setRequiredAmount(1);
         
-        System.out.println(itemOne);
+        String itemInfo = itemOne.toString();
+        System.out.println(itemInfo);
         
         Tools toolBroom = new Tools();
         
         toolBroom.setFunction("This will enable you to fly around");
         
+        String toolInfo = toolBroom.toString();
         System.out.println(toolBroom);
     }
     

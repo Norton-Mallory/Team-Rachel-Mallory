@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author rachelbarnes
  */
-public class Tools implements Serializable {
+public class Tools extends Item {
     //class instance variables
     private String function;
 
