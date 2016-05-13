@@ -7,7 +7,10 @@ package hogwarts;
 
 import byui.CIT260.Hogwarts.model.House;
 import byui.CIT260.Hogwarts.model.Game;
+import byui.CIT260.Hogwarts.model.Item;
+import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
+import byui.CIT260.Hogwarts.model.Tools;
 import byui.CIT260.Hogwarts.model.Character;
 import byui.CIT260.Hogwarts.model.Scene;
 import byui.CIT260.Hogwarts.model.Location;
@@ -47,6 +50,34 @@ public class Hogwarts {
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
         
+
+        //map
+        Map mapOne = new Map();
+        
+        mapOne.setName("library");
+        mapOne.setNumberOfColumns(3);
+        mapOne.setNumberOfRows(2);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        //item
+        Item itemOne = new Item();
+        
+        itemOne.setInventoryType("Broomstick");
+        itemOne.setQuantityInStock(1);
+        itemOne.setRequiredAmount(1);
+        
+        String itemInfo = itemOne.toString();
+        System.out.println(itemInfo);
+        
+        //tools
+        Tools toolBroom = new Tools();
+        
+        toolBroom.setFunction("This will enable you to fly around");
+        
+        String toolInfo = toolBroom.toString();
+        System.out.println(toolBroom);
+
         //Character
         Character characterOne = new Character();
         
@@ -78,7 +109,6 @@ public class Hogwarts {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
-    
     }
     
 }
