@@ -5,6 +5,7 @@
  */
 package hogwarts;
 
+import byui.CIT260.Hogwarts.model.House;
 import byui.CIT260.Hogwarts.model.Player;
 
 /**
@@ -25,6 +26,12 @@ public class Hogwarts {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        House houseOne = new House();
+        
+        houseOne.setName("Gryffindor");
+        
+        String houseInfo = houseOne.toString();
+        System.out.println(houseInfo);
     }
     
 }
