@@ -86,6 +86,49 @@ public class TaskControlTest {
         assertEquals(expResult, result, 0.0);
         
     }
+
+    /**
+     * Test of solveForX method, of class TaskControl.
+     */
+    @Test
+    public void testSolveForX() {
+        System.out.println("solveForX");
+        System.out.println("test case 1");
+        double x = 5;
+        TaskControl instance = new TaskControl();
+        double expResult = 16;
+        double result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("solveForX");
+        System.out.println("test case 2");
+        x = 0;
+        expResult = -1;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("solveForX");
+        System.out.println("test case 3");
+        x = 20;
+        expResult = -1;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+        
+        System.out.println("solveForX");
+        System.out.println("test case 4");
+        x = 1;
+        expResult = 0;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+        
+          System.out.println("solveForX");
+        System.out.println("test case 5");
+        x = 19;
+        expResult = 324;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+       
+    }
     
     
 }
