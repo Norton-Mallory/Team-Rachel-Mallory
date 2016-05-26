@@ -25,4 +25,18 @@ public class TaskControl {
 
         return area;
     }
+    public double calcAreaOfCylinder(double radius, double height) {
+
+        if (radius <= 0) {
+        return -1;
+        }
+        if (height <= 0 || height > 28){
+        return -1;
+        }
+        
+        double area = (2 * Math.PI * radius * height) + (2 * Math.PI * Math.pow(radius,2)); 
+      
+        return area;
+
+    }
 }
