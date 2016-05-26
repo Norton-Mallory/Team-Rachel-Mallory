@@ -17,12 +17,29 @@ public class TaskControl {
             return -1;
 
         }
-        
+
         if (base <= 0 || base > 36) {
             return -1;
         }
-        double area = (base * height) / 2; 
+        double area = (base * height) / 2;
 
         return area;
     }
+
+    public double solveForX(double x) {
+
+        if (x <= 0) { 
+            return -1;
+        }
+        
+        if (x >= 20) {
+            return -1;
+        }
+
+        double solution = x * x - (2 * x) + 1;  
+        
+        return solution;
+
+    }
+
 }
