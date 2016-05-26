@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author rachelbarnes
  */
 public class TaskControlTest {
-    
+
     public TaskControlTest() {
     }
 
@@ -30,8 +30,7 @@ public class TaskControlTest {
         double expResult = 150;
         double result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-         
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 2");
         base = 14;
@@ -39,8 +38,7 @@ public class TaskControlTest {
         expResult = -1;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 3");
         base = -2;
@@ -48,8 +46,7 @@ public class TaskControlTest {
         expResult = -1;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 4");
         base = 80;
@@ -57,8 +54,7 @@ public class TaskControlTest {
         expResult = -1;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 5");
         base = 12;
@@ -66,8 +62,7 @@ public class TaskControlTest {
         expResult = -1;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 6");
         base = 0;
@@ -75,8 +70,7 @@ public class TaskControlTest {
         expResult = -1;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
-        
+
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 7");
         base = 36;
@@ -84,7 +78,48 @@ public class TaskControlTest {
         expResult = 342;
         result = instance.calcAreaOfTriangle(base, height);
         assertEquals(expResult, result, 0.0);
-        
+
+    }
+
+    /* Test of solveForX method, of class TaskControl.
+     */
+    @Test
+    public void testSolveForX() {
+        System.out.println("solveForX");
+        System.out.println("test case 1");
+        double x = 5;
+        TaskControl instance = new TaskControl();
+        double expResult = 16;
+        double result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+
+        System.out.println("solveForX");
+        System.out.println("test case 2");
+        x = 0;
+        expResult = -1;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+
+        System.out.println("solveForX");
+        System.out.println("test case 3");
+        x = 20;
+        expResult = -1;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+
+        System.out.println("solveForX");
+        System.out.println("test case 4");
+        x = 1;
+        expResult = 0;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
+
+        System.out.println("solveForX");
+        System.out.println("test case 5");
+        x = 19;
+        expResult = 324;
+        result = instance.solveForX(x);
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
@@ -101,49 +136,7 @@ public class TaskControlTest {
         double expResult = 904.78;
         double result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
-     * Test of solveForX method, of class TaskControl.
-     */
-    @Test
-    public void testSolveForX() {
-        System.out.println("solveForX");
-        System.out.println("test case 1");
-        double x = 5;
-        TaskControl instance = new TaskControl();
-        double expResult = 16;
-        double result = instance.solveForX(x);
-        assertEquals(expResult, result, 0.0);
-        
-        System.out.println("solveForX");
-        System.out.println("test case 2");
-        x = 0;
-        expResult = -1;
-        result = instance.solveForX(x);
-        assertEquals(expResult, result, 0.0);
-        
-        System.out.println("solveForX");
-        System.out.println("test case 3");
-        x = 20;
-        expResult = -1;
-        result = instance.solveForX(x);
-        assertEquals(expResult, result, 0.0);
-        
-        System.out.println("solveForX");
-        System.out.println("test case 4");
-        x = 1;
-        expResult = 0;
-        result = instance.solveForX(x);
-        assertEquals(expResult, result, 0.0);
-        
-          System.out.println("solveForX");
-        System.out.println("test case 5");
-        x = 19;
-        expResult = 324;
-        result = instance.solveForX(x);
-        assertEquals(expResult, result, 0.0);
-       
-    }
-    
+
         System.out.println("calcAreaOfCylinder");
         //test case 2
         System.out.println("Test case 2");
@@ -152,7 +145,7 @@ public class TaskControlTest {
         expResult = -1.00;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
+
         System.out.println("calcAreaOfCylinder");
         //test case 3
         System.out.println("Test case 3");
@@ -161,7 +154,7 @@ public class TaskControlTest {
         expResult = -1.00;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
+
         System.out.println("calcAreaOfCylinder");
         //test case 4
         System.out.println("Test case 4");
@@ -170,7 +163,7 @@ public class TaskControlTest {
         expResult = -1.00;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
+
         System.out.println("calcAreaOfCylinder");
         //test case 5
         System.out.println("Test case 5");
@@ -179,7 +172,7 @@ public class TaskControlTest {
         expResult = -1.00;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
+
         System.out.println("calcAreaOfCylinder");
         //test case 6
         System.out.println("Test case 6");
@@ -188,7 +181,7 @@ public class TaskControlTest {
         expResult = -1.00;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-        
+
         System.out.println("calcAreaOfCylinder");
         //test case 7
         System.out.println("Test case 7");
@@ -197,5 +190,5 @@ public class TaskControlTest {
         expResult = 3015.93;
         result = instance.calcAreaOfCylinder(radius, height);
         assertEquals(expResult, result, 0.01);
-}
+    }
 }
