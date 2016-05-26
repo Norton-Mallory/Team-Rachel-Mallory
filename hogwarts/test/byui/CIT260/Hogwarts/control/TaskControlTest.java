@@ -86,6 +86,75 @@ public class TaskControlTest {
         assertEquals(expResult, result, 0.0);
         
     }
+
+    /**
+     * Test of calcAreaOfCylinder method, of class TaskControl.
+     */
+    @Test
+    public void testCalcAreaOfCylinder() {
+        System.out.println("calcAreaOfCylinder");
+        //test case 1
+        System.out.println("Test case 1");
+        double radius = 8.0;
+        double height = 10.0;
+        TaskControl instance = new TaskControl();
+        double expResult = 904.78;
+        double result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
     
-    
+        System.out.println("calcAreaOfCylinder");
+        //test case 2
+        System.out.println("Test case 2");
+        radius = -5.0;
+        height = -12.0;
+        expResult = -1.00;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
+        System.out.println("calcAreaOfCylinder");
+        //test case 3
+        System.out.println("Test case 3");
+        radius = 13.0;
+        height = -10.0;
+        expResult = -1.00;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
+        System.out.println("calcAreaOfCylinder");
+        //test case 4
+        System.out.println("Test case 4");
+        radius = 6.0;
+        height = 45.0;
+        expResult = -1.00;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
+        System.out.println("calcAreaOfCylinder");
+        //test case 5
+        System.out.println("Test case 5");
+        radius = 0.0;
+        height = 15.0;
+        expResult = -1.00;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
+        System.out.println("calcAreaOfCylinder");
+        //test case 6
+        System.out.println("Test case 6");
+        radius = 7.0;
+        height = 0.0;
+        expResult = -1.00;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+        
+        System.out.println("calcAreaOfCylinder");
+        //test case 7
+        System.out.println("Test case 7");
+        radius = 12.0;
+        height = 28.0;
+        expResult = 3015.93;
+        result = instance.calcAreaOfCylinder(radius, height);
+        assertEquals(expResult, result, 0.01);
+}
 }
