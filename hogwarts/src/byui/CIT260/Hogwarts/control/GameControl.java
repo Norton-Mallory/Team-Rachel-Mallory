@@ -5,10 +5,20 @@
  */
 package byui.CIT260.Hogwarts.control;
 
+import byui.CIT260.Hogwarts.model.Player;
+
 /**
  *
  * @author rachelbarnes
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+         System.out.println("\n*** createPlayer() function called ***");
+        return new Player();
+    
+    }
+
+        
     
 }
