@@ -113,19 +113,16 @@ public class StartProgramView {
     }
 
     private boolean doAction(String playersName) {
-        
-    
+
         /**
          * doAction(playersName): boolean BEGIN if the length of the playersName < 2 then
          * display “Invalid name: The name must be > 1 character” return false
          *
          * create Player with specified name if unsuccessful then display
          * “Invalid name: The name is too short” return false display customized
-         * welcome message display mainMenuView return true END 
+         * welcome message display mainMenuView return true END
          *
          */
-        
-        
         if (playersName.length() < 2) {
             System.out.println("\n Invalid players name: "
                     + "The name must be greater than on echaracter in length");
@@ -138,14 +135,22 @@ public class StartProgramView {
             System.out.println("\n Error creating the player.");
             return false;
         }
-        
+
         this.displayNextView(player);
         return true;
+        
+
     }
+    
 
     private void displayNextView(Player player) {
-        System.out.println("\n*** displayNextView() called ***");
+        System.out.println("\n========================================="
+                         + "\n Welcome to the game " + player.getName()
+                         + "\n We hope you have a lot of fun!"
+                         + "\n=========================================");
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.displayMainMenuView();
     }
+   
 }
-    
-    

@@ -5,6 +5,8 @@
  */
 package hogwarts;
 
+import byui.CIT260.Hogwarts.model.Game;
+import byui.CIT260.Hogwarts.model.Player;
 import byui.CIT260.Hogwarts.view.StartProgramView;
 
 /**
@@ -12,7 +14,8 @@ import byui.CIT260.Hogwarts.view.StartProgramView;
  * @author Mallory
  */
 public class Hogwarts {
-
+    private static Game currentGame = null;
+    private static Player player = null;
     /**
      * @param args the command line arguments
      */
@@ -22,6 +25,22 @@ public class Hogwarts {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Hogwarts.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Hogwarts.player = player;
     }
     
 }
