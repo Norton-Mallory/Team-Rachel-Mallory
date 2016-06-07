@@ -16,43 +16,49 @@ import java.util.Scanner;
 public class MainMenuView {
 
     private String menu;
-    private String promptMessage;
 
     public MainMenuView() {
-        this.promptMessage = "\n Please enter a valid value";
+
         this.menu = "\n---------------------------------------------"
-                  + "\n| Main Menu                                 |"
-                  + "\n---------------------------------------------"
-                  + "\n1 - Start game"
-                  + "\n2 - Restart existing game"
-                  + "\n3 - Help menu"
-                  + "\n4 - Save game"
-                  + "\n5 - Exit"
-                  + "\n---------------------------------------------";
+                + "\n| Main Menu                                 |"
+                + "\n---------------------------------------------"
+                + "\n1 - Start game"
+                + "\n2 - Restart existing game"
+                + "\n3 - Help menu"
+                + "\n4 - Save game"
+                + "\n5 - Exit"
+                + "\n---------------------------------------------"
+                + "\n Please enter a valid value";
     }
-    
-    
+
     public void displayMainMenuView() {
-        System.out.println("\n" + this.menu);
-        boolean done = false;
+
+        boolean notExit = true;
         do {
-           
-             String menuOption = this.getMenuOption();
+            // display then menu and get the menu option
+            String menuOption = this.getMenuOption();
             
-            done = this.doAction(menuOption);
-        } while (!done);
-        
+            if (menuOption.equals("5")) {
+                notExit = false;
+                break;
+            }
+            
+            
+            // perform the command (action) for the menu option selected
+            notExit = this.doAction(menuOption);
+        } while (notExit);
+
     }
 
     private String getMenuOption() {
-        
+
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
 
         while (!valid) {
-            
-System.out.println("\n" + this.promptMessage);
+
+            System.out.println("\n" + this.menu);
             value = keyboard.nextLine();
             value = value.trim();
 
@@ -62,22 +68,22 @@ System.out.println("\n" + this.promptMessage);
 
             }
 
-            break;
+            valid = true;
         }
         return value;
 
     }
 
-    public boolean doAction(String choice){
-        
-        switch (choice){
+    public boolean doAction(String choice) {
+
+        switch (choice) {
             case "1":
                 this.startGame();
                 break;
             case "2":
                 this.restartExistingGame();
                 break;
-            case "3": 
+            case "3":
                 this.helpMenu();
                 break;
             case "4":
@@ -88,15 +94,15 @@ System.out.println("\n" + this.promptMessage);
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break;    
+                break;
         }
         return false;
     }
-    
+
     private void startGame() {
         GameControl.createNewGame(Hogwarts.getPlayer());
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        HouseMenuView houseMenu = new HouseMenuView();
+        houseMenu.displayHouseMenuView();
     }
 
     private void restartExistingGame() {
@@ -115,5 +121,4 @@ System.out.println("\n" + this.promptMessage);
     private void exit() {
         System.out.println("*** exit function called ***");
     }
-    }
-
+}
