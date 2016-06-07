@@ -153,7 +153,8 @@ public class GameMenuView {
     }
 
     private void quit() {
-        System.out.println("\n*** quit() function called  ***");
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMainMenuView();
     }
 
     

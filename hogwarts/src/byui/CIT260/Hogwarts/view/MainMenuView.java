@@ -30,28 +30,28 @@ public class MainMenuView {
                   + "\n5 - Exit"
                   + "\n---------------------------------------------";
     }
-    
+
     
     public void displayMainMenuView() {
         System.out.println("\n" + this.menu);
         boolean done = false;
         do {
-           
+
              String menuOption = this.getMenuOption();
              
             done = this.doAction(menuOption);
         } while (!done);
         
-    }
-
+            }
+            
     private String getMenuOption() {
-        
+
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
 
         while (!valid) {
-            
+
 System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
@@ -69,7 +69,7 @@ System.out.println("\n" + this.promptMessage);
     }
 
     public boolean doAction(String choice){
-        
+
         switch (choice){
             case "1":
                 this.startGame();
@@ -77,7 +77,7 @@ System.out.println("\n" + this.promptMessage);
             case "2":
                 this.restartExistingGame();
                 break;
-            case "3": 
+            case "3":
                 this.helpMenu();
                 break;
             case "4":
@@ -88,13 +88,15 @@ System.out.println("\n" + this.promptMessage);
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break;    
+                break;
         }
         return false;
     }
-    
-    private void startGame() {
 
+    private void startGame() {
+        GameControl.createNewGame(Hogwarts.getPlayer());
+        HouseMenuView houseMenu = new HouseMenuView();
+        houseMenu.displayHouseMenuView();
         
     }
 
@@ -115,7 +117,7 @@ System.out.println("\n" + this.promptMessage);
         System.out.println("*** exit function called ***");
     }
 
-   
+
    
     }
 

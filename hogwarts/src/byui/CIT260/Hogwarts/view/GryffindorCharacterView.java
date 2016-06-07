@@ -28,19 +28,19 @@ public class GryffindorCharacterView {
                           +"\n 7 - George Weasley"
                           +"\n*****************************");
     }
-     public void displayGryffindorCharacter() {
+     public void displayGryffindorCharacterView() {
         System.out.println("\n" + this.gryffindor);
         boolean done = false;
         do {
         // prompt for and get the game menu option
-        String gryffindorCharacterOption = this.getgryffindorCharacterOption();
+        String GryffindorCharacterOption = this.getGryffindorCharacterOption();
            
         // do the requested action and display the next view
-        done = this.doAction(gryffindorCharacterOption);  
+        done = this.doAction(GryffindorCharacterOption);  
     } while (!done);
     }
 
-    private String getgryffindorCharacterOption() {
+    private String getGryffindorCharacterOption() {
       Scanner keyboard = new Scanner(System.in);
       String value = "";
       boolean valid = false;
@@ -95,6 +95,7 @@ public class GryffindorCharacterView {
     }
 
     private void harryPotter() {
+        
         System.out.println("\n Welcome to the Quad Wizard Tournament Harry. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenu();
@@ -135,6 +136,8 @@ public class GryffindorCharacterView {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenu();
     }
+
+    
     
 
 }
