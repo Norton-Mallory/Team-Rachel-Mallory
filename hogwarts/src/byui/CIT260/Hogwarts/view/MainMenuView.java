@@ -38,7 +38,7 @@ public class MainMenuView {
         do {
            
              String menuOption = this.getMenuOption();
-            
+             
             done = this.doAction(menuOption);
         } while (!done);
         
@@ -94,9 +94,8 @@ System.out.println("\n" + this.promptMessage);
     }
     
     private void startGame() {
-        GameControl.createNewGame(Hogwarts.getPlayer());
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+
+        
     }
 
     private void restartExistingGame() {
@@ -115,5 +114,8 @@ System.out.println("\n" + this.promptMessage);
     private void exit() {
         System.out.println("*** exit function called ***");
     }
+
+   
+   
     }
 
