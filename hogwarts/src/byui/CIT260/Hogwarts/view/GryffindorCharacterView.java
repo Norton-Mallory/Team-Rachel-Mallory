@@ -26,6 +26,7 @@ public class GryffindorCharacterView {
                           +"\n 5 - Neville Longbottom"
                           +"\n 6 - Fred Weasley"
                           +"\n 7 - George Weasley"
+                          +"\n 8 - Quit"
                           +"\n*****************************");
     }
      public void displayGryffindorCharacterView() {
@@ -86,6 +87,9 @@ public class GryffindorCharacterView {
             case "7":
                 this.georgeWeasley();
                 break;
+            case "8":
+                this.quit();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break; 
@@ -135,6 +139,11 @@ public class GryffindorCharacterView {
         System.out.println("\n Welcome to the Quad Wizard Tournament George. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenu();
+    }
+
+    private void quit() {
+        HouseMenuView houseMenu = new HouseMenuView();
+        houseMenu.displayHouseMenuView();
     }
 
     

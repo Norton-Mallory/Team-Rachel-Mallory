@@ -116,11 +116,12 @@ public class GameMenuView {
     }
 
     private void firstTask() {
-        System.out.println("\n*** firstTask() function called  ***");
+        System.out.println("\n*** firstTaskCalled() function called  ***");
     }
 
     private void secondTask() {
-        System.out.println("\n*** secondTask() function called  ***");
+        SecondTaskView secondTask = new SecondTaskView();
+        secondTask.displaySecondTask();
     }
 
     private void thirdTask() {
