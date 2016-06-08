@@ -11,7 +11,7 @@ package byui.CIT260.Hogwarts.control;
  */
 public class TaskControl {
 
-    public double calcAreaOfTriangle(double base, double height) {
+    public static double calcAreaOfTriangle(double base, double height) {
 
         if (height <= 0) {
             return -1;
@@ -26,7 +26,23 @@ public class TaskControl {
         return area;
     }
 
-    public double calcAreaOfCylinder(double radius, double height) {
+    public static boolean checkArea(double base, double height, double solution) {
+        //calculate area of triangle
+        double area = TaskControl.calcAreaOfTriangle(base, height);
+                
+        //if failed, return error code
+        if (area < 0) {
+            return false;
+        }
+        
+        //if successful, check solution equals area 
+        if (area == solution) {
+            return true;
+        }
+        return false;
+    }
+    
+    public static double calcAreaOfCylinder(double radius, double height) {
 
         if (radius <= 0) {
         return -1;
@@ -41,7 +57,7 @@ public class TaskControl {
 
     }
 
-    public double solveForX(double x) {
+    public static double solveForX(double x) {
 
         if (x <= 0) { 
             return -1;
