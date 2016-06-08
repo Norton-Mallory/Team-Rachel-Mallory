@@ -17,7 +17,7 @@ public class RavenclawView {
 
     public RavenclawView() {
         this.promptMessage = ("\n Please enter a valid value");
-        this.ravenclaw = ("\n*****************************"
+        this.ravenclaw = ( "\n-------------------------"
                           +"\n 1 - Luna Lovegood"
                           +"\n 2 - Cho Chang"
                           +"\n 3 - Roger Davies"
@@ -25,7 +25,7 @@ public class RavenclawView {
                           +"\n 5 - Padma Patil"
                           +"\n 6 - Terry Boot"
                           +"\n 7 - Quit"
-                          +"\n*****************************");
+                          +"\n-------------------------");
     }
      public void displayRavenclawCharacterView() {
         System.out.println("\n" + this.ravenclaw);

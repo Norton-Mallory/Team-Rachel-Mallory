@@ -17,7 +17,7 @@ public class SlytherinCharacterView {
 
     public SlytherinCharacterView() {
         this.promptMessage = ("\n Please enter a valid value");
-        this.slytherin = ("\n*****************************"
+        this.slytherin = ("\n------------------------"
                           +"\n 1 - Draco Malfoy"
                           +"\n 2 - Gregory Goyle"
                           +"\n 3 - Vincent Crabbe"
@@ -26,7 +26,7 @@ public class SlytherinCharacterView {
                           +"\n 6 - Blaise Zabini"
                           +"\n 7 - Pansy Parkinson"
                           +"\n 8 - Quit"
-                          +"\n*****************************");
+                          +"\n-----------------------");
     }
      public void displaySlytherinCharacterView() {
         System.out.println("\n" + this.slytherin);

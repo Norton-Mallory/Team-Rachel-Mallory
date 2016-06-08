@@ -121,11 +121,13 @@ public class GameMenuView {
     }
 
     private void secondTask() {
-        System.out.println("\n*** secondTaskCalled() function called  ***");
+        SecondTaskView secondTask = new SecondTaskView();
+        secondTask.displaySecondTaskView();
     }
 
     private void thirdTask() {
-        System.out.println("\n*** thirdTask() function called  ***");
+        ThirdTaskView thirdTask = new ThirdTaskView();
+        thirdTask.displayThirdTaskView();
     }
 
     private void moveToNewLocation() {
