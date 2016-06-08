@@ -120,8 +120,7 @@ public class GameMenuView {
     }
 
     private void secondTask() {
-        SecondTaskView secondTask = new SecondTaskView();
-        secondTask.displaySecondTask();
+        System.out.println("\n*** secondTaskCalled() function called  ***");
     }
 
     private void thirdTask() {
