@@ -88,13 +88,20 @@ public class FirstTaskView {
         else {
             System.out.println("\n Success! You were able to open the chest."
                 + "\n Inside you find a golden egg.");
+            
+           
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayGameMenu();
+    
         }
             //display error message and return false
             
         //else (between boundaries) then
             //display success message and return true
-     
-    return false;
+             
+    return true;
+    
+    
     }
 }
 

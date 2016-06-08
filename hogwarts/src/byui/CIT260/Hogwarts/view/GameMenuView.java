@@ -116,7 +116,8 @@ public class GameMenuView {
     }
 
     private void firstTask() {
-        System.out.println("\n*** firstTaskCalled() function called  ***");
+        FirstTaskView firstTask = new FirstTaskView();
+        firstTask.displayFirstTaskView();
     }
 
     private void secondTask() {

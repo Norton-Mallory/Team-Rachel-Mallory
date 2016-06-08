@@ -57,7 +57,7 @@ public class TaskControl {
 
     }
 
-    public double solveForX(double x) {
+    public static double solveForX(double x) {
 
         if (x <= 0) { 
             return -1;
