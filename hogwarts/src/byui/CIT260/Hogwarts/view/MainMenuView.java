@@ -16,40 +16,34 @@ import java.util.Scanner;
 public class MainMenuView {
 
     private String menu;
+    private String promptMessage;
 
     public MainMenuView() {
-
+        this.promptMessage = "\n Please enter a valid value";
         this.menu = "\n---------------------------------------------"
-                + "\n| Main Menu                                 |"
-                + "\n---------------------------------------------"
-                + "\n1 - Start game"
-                + "\n2 - Restart existing game"
-                + "\n3 - Help menu"
-                + "\n4 - Save game"
-                + "\n5 - Exit"
-                + "\n---------------------------------------------"
-                + "\n Please enter a valid value";
+                  + "\n| Main Menu                                 |"
+                  + "\n---------------------------------------------"
+                  + "\n1 - Start game"
+                  + "\n2 - Restart existing game"
+                  + "\n3 - Help menu"
+                  + "\n4 - Save game"
+                  + "\n5 - Exit"
+                  + "\n---------------------------------------------";
     }
 
+    
     public void displayMainMenuView() {
-
-        boolean notExit = true;
+        System.out.println("\n" + this.menu);
+        boolean done = false;
         do {
-            // display then menu and get the menu option
-            String menuOption = this.getMenuOption();
-            
-            if (menuOption.equals("5")) {
-                notExit = false;
-                break;
+
+             String menuOption = this.getMenuOption();
+             
+            done = this.doAction(menuOption);
+        } while (!done);
+        
             }
             
-            
-            // perform the command (action) for the menu option selected
-            notExit = this.doAction(menuOption);
-        } while (notExit);
-
-    }
-
     private String getMenuOption() {
 
         Scanner keyboard = new Scanner(System.in);
@@ -58,7 +52,7 @@ public class MainMenuView {
 
         while (!valid) {
 
-            System.out.println("\n" + this.menu);
+System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
 
@@ -68,15 +62,15 @@ public class MainMenuView {
 
             }
 
-            valid = true;
+            break;
         }
         return value;
 
     }
 
-    public boolean doAction(String choice) {
+    public boolean doAction(String choice){
 
-        switch (choice) {
+        switch (choice){
             case "1":
                 this.startGame();
                 break;
@@ -103,6 +97,7 @@ public class MainMenuView {
         GameControl.createNewGame(Hogwarts.getPlayer());
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.displayHouseMenuView();
+        
     }
 
     private void restartExistingGame() {
@@ -121,4 +116,8 @@ public class MainMenuView {
     private void exit() {
         System.out.println("*** exit function called ***");
     }
-}
+
+
+   
+    }
+

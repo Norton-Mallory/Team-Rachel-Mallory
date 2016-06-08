@@ -19,15 +19,15 @@ public class HouseMenuView {
    public HouseMenuView() {
 
         this.menu = "\n---------------------------------------------"
-                + "\n| House Menu                                 |"
-                + "\n---------------------------------------------"
-                + "\n1 - Gryffindor"
-                + "\n2 - Slytherin"
-                + "\n3 - Hufflepuff"
-                + "\n4 - Ravenclaw"
-                + "\n5 - Main Menu"
-                + "\n---------------------------------------------"
-                + "\n Please enter a valid value";
+                  + "\n| House Menu                                |"
+                  + "\n---------------------------------------------"
+                  + "\n1 - Gryffindor"
+                  + "\n2 - Slytherin"
+                  + "\n3 - Hufflepuff"
+                  + "\n4 - Ravenclaw"
+                  + "\n5 - Main Menu"
+                  + "\n---------------------------------------------"
+                  + "\n Please enter a valid value";
     }
 
     public void displayHouseMenuView() {
@@ -99,20 +99,24 @@ public class HouseMenuView {
     }
 
     private void gryffindor() {
-        System.out.println("\n*** gryffindor() function called ***");
+        GryffindorCharacterView gryffindorCharacter = new GryffindorCharacterView();
+        gryffindorCharacter.displayGryffindorCharacterView();
     }
 
     private void slytherin() {
-         System.out.println("\n*** slytherin() function called ***");
+        SlytherinCharacterView slytherinCharacter = new SlytherinCharacterView();
+        slytherinCharacter.displaySlytherinCharacterView(); 
        
     }
 
     private void hufflepuff() {
-          System.out.println("\n*** hufflepuff() function called ***");
+        HufflepuffCharacterView hufflepuffCharacter = new HufflepuffCharacterView();
+        hufflepuffCharacter.displayHufflepuffCharacterView(); 
     }
 
     private void ravenclaw() {
-         System.out.println("\n*** ravenclaw() function called ***");
+        RavenclawView ravenclawCharacter = new RavenclawView();
+        ravenclawCharacter.displayRavenclawCharacterView();
     }
 
     private void mainMenu() {

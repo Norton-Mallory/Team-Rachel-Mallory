@@ -25,7 +25,11 @@ public class GameControl {
     
 
         
-    }   
+    }  
+    
+    public static void saveCharacter (String name){
+        System.out.println("\n*** saveCharacterCalled stub function ***");
+    }
 
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame stub function ***");

@@ -99,15 +99,18 @@ System.out.println("\n" + this.promptMessage);
     }
 
     private void gameMenu() {
-       System.out.println("\n*** gameMenu() function called  ***");
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayGameMenu();
     }
 
     private void mainMenu() {
-        System.out.println("\n*** mainMenu() function called  ***");
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMainMenuView();
     }
 
     private void quit() {
-        System.out.println("\n*** quit() function called  ***");
+      MainMenuView mainMenu = new MainMenuView();
+      mainMenu.displayMainMenuView();  
     }
 
    
