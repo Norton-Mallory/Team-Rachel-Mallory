@@ -5,22 +5,15 @@
  */
 package byui.CIT260.Hogwarts.view;
 
+import byui.CIT260.Hogwarts.control.TaskControl;
+import java.util.Scanner;
+
 /**
  *
  * @author Mallory
  */
 public class SecondTaskView {
-    
-
-    public SecondTaskView() {
-        
-        
-    }
-    
-
-    void displaySecondTask() {
-        System.out.println("\n SecondTask() function called");
-    }
-    
-    
+     public void displaySecondTaskView(){
+         System.out.println("\n The secondTaskView() function has been called");
+     }
 }

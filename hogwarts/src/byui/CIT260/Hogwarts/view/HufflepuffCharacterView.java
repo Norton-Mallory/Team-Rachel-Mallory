@@ -17,7 +17,7 @@ class HufflepuffCharacterView {
 
     public HufflepuffCharacterView() {
         this.promptMessage = ("\n Please enter a valid value");
-        this.hufflepuff = ("\n*****************************"
+        this.hufflepuff = ("\n-----------------------------"
                           +"\n 1 - Cedric Diggory"
                           +"\n 2 - Zacharias Smith"
                           +"\n 3 - Justin Finch-Fletchley"
@@ -26,7 +26,7 @@ class HufflepuffCharacterView {
                           +"\n 6 - Susan Bones"
                           +"\n 7 - Anthony Otterburn"
                           +"\n 8 - Quit"
-                          +"\n*****************************");
+                          +"\n-----------------------------");
     }
      public void displayHufflepuffCharacterView() {
         System.out.println("\n" + this.hufflepuff);

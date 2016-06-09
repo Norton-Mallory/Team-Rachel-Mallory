@@ -18,7 +18,7 @@ public class GryffindorCharacterView {
 
     public GryffindorCharacterView() {
         this.promptMessage = ("\n Please enter a valid value");
-        this.gryffindor = ("\n*****************************"
+        this.gryffindor = ("\n--------------------------"
                           +"\n 1 - Harry Potter"
                           +"\n 2 - Ron Weasley"
                           +"\n 3 - Hermione Granger"
@@ -27,7 +27,7 @@ public class GryffindorCharacterView {
                           +"\n 6 - Fred Weasley"
                           +"\n 7 - George Weasley"
                           +"\n 8 - Quit"
-                          +"\n*****************************");
+                          +"\n--------------------------");
     }
      public void displayGryffindorCharacterView() {
         System.out.println("\n" + this.gryffindor);

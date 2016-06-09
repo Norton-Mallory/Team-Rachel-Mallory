@@ -51,10 +51,24 @@ public class TaskControl {
         return -1;
         }
         
-        double area = (2 * Math.PI * radius * height) + (2 * Math.PI * Math.pow(radius,2)); 
+        double area = (Math.round((2 * Math.PI * radius * height) + (2 * Math.PI * Math.pow(radius,2)))); 
       
         return area;
 
+    }
+    public static boolean checkCylinderArea(double radius, double height, double solution) {
+        //calculate area of Cylinder
+        double area = TaskControl.calcAreaOfCylinder(radius, height);
+                
+        //if failed, return error code
+        if (area < 0) {
+            return false;
+        }
+    
+        if (area == solution) {
+            return true;
+        }
+        return false;
     }
 
     public static double solveForX(double x) {
