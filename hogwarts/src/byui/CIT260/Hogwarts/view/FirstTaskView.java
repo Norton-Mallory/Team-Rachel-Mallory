@@ -37,14 +37,13 @@ public class FirstTaskView {
 
         boolean done = false;
         do {
-            // display then menu and get the menu option
+            // display the menu and get the menu option
             String solution = this.getSolution();
             
             if (solution.equals("Q")) {
                 done = true;
                 break;
             }
-            
             
             // perform the command (action) for the menu option selected
             done = this.doAction(solution);
