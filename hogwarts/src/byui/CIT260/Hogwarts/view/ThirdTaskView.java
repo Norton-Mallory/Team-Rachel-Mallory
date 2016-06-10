@@ -34,7 +34,7 @@ public class ThirdTaskView {
                 +"\n----------------------------------------------"
                 +"\n Solve the area of the cylinder."
                 +"\n The radius is 8 and the height is 10."
-                +"\n Round your answer to the nearest whole number."
+                +"\n Round your answer to two places after the decimal."
                 +"\n Enter your answer below: ";
        
                  
