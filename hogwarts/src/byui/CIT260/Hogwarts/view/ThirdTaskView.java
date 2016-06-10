@@ -20,9 +20,9 @@ public class ThirdTaskView {
 
     public ThirdTaskView() {
         this.third= 
-                 "\n---------------------------------------------"
-                +"\n |   Welcome to the Third Task    |"
-                +"\n---------------------------------------------"
+                 "\n-----------------------------------------------"
+                +"\n     |   Welcome to the Third Task    |"
+                +"\n-----------------------------------------------"
                 +"\n For this task you need to"
                 +"\n locate a cylinder shaped chest"
                 +"\n inside of a maze. Once you have "
@@ -31,10 +31,10 @@ public class ThirdTaskView {
                 +"\n order to get out of the maze and "
                 +"\n complete this task."
                 +"\n Good luck!"
-                +"\n----------------------------------------------"
+                +"\n-----------------------------------------------"
                 +"\n Solve the area of the cylinder."
                 +"\n The radius is 8 and the height is 10."
-                +"\n Round your answer to two places after the decimal."
+                +"\n Round your answer to the nearest whole number."
                 +"\n Enter your answer below: ";
        
                  

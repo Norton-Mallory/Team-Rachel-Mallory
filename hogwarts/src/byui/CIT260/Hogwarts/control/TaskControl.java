@@ -44,7 +44,7 @@ public class TaskControl {
           return -1;
       }
   
-      double area = (2 * Math.PI * radius * height) + (2 * Math.PI * Math.pow(radius,2)); 
+      double area = Math.round((2 * Math.PI * radius * height) + (2 * Math.PI * Math.pow(radius,2))); 
       
       return area;
 

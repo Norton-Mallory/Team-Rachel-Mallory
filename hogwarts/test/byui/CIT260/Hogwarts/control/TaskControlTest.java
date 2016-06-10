@@ -133,9 +133,9 @@ public class TaskControlTest {
         double radius = 8.0;
         double height = 10.0;
         TaskControl instance = new TaskControl();
-        double expResult = 904.78;
+        double expResult = 905.0;
         double result = instance.calcAreaOfCylinder(radius, height);
-        assertEquals(expResult, result, 0.01);
+        assertEquals(expResult, result, 0.0);
 
         System.out.println("calcAreaOfCylinder");
         //test case 2
@@ -187,8 +187,8 @@ public class TaskControlTest {
         System.out.println("Test case 7");
         radius = 12.0;
         height = 28.0;
-        expResult = 3015.93;
+        expResult = 3016.0;
         result = instance.calcAreaOfCylinder(radius, height);
-        assertEquals(expResult, result, 0.01);
+        assertEquals(expResult, result, 0.0);
     }
 }
