@@ -13,12 +13,11 @@ import java.util.Scanner;
  *
  * @author Mallory
  */
-public class StartProgramView {
+public class StartProgramView extends View {
 
-    private String promptMessage;
 
     public StartProgramView() {
-        this.promptMessage = "\nPlease enter your name:";
+        super("\nPlease enter your name:");
         this.displayBanner();
     }
 
@@ -56,63 +55,8 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
-
-        /**
-         * displayView(): void BEGIN do Prompt for and get the players name if
-         * (playersName == “Q”) then exit
-         *
-         * do the action and display the next view while the action is not
-         * successful END
-         */
-        boolean done = false; //set flag to not done
-        do {
-            //promt for and get players name
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("5")) //user wants to quit
-            {
-                return; //exit the game
-            }
-            //do the requested action and display the next view
-            done = this.doAction(playersName);
-
-        } while (!done);
-    }
-
-    private String getPlayersName() {
-        /**
-         * getInput(): value BEGIN WHILE a valid value has not been entered
-         * DISPLAY a message prompting the user to enter a value GET the value
-         * entered from keyboard Trim front and trailing blanks off of the value
-         * IF the length of the value is blank THEN DISPLAY “Invalid value: The
-         * value cannot be blank” CONTINUE END IF BREAK ENDWHILE RETURN value
-         * END
-         *
-         */
-
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value can not be blank");
-                continue;
-
-            }
-
-            break;
-        }
-        return value;
-
-    }
-
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
 
         /**
          * doAction(playersName): boolean BEGIN if the length of the playersName < 2 then

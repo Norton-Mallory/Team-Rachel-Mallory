@@ -11,13 +11,12 @@ import java.util.Scanner;
  *
  * @author Mallory
  */
-class HufflepuffCharacterView {
-    private String promptMessage;
-    private String hufflepuff;
+class HufflepuffCharacterView extends View{
+ 
 
     public HufflepuffCharacterView() {
-        this.promptMessage = ("\n Please enter a valid value");
-        this.hufflepuff = ("\n-----------------------------"
+        super("\n Please enter a valid value"
+                          +"\n-----------------------------"
                           +"\n 1 - Cedric Diggory"
                           +"\n 2 - Zacharias Smith"
                           +"\n 3 - Justin Finch-Fletchley"
@@ -28,41 +27,9 @@ class HufflepuffCharacterView {
                           +"\n 8 - Quit"
                           +"\n-----------------------------");
     }
-     public void displayHufflepuffCharacterView() {
-        System.out.println("\n" + this.hufflepuff);
-        boolean done = false;
-        do {
-        // prompt for and get the game menu option
-        String HufflepuffCharacterOption = this.getHufflepuffCharacterOption();
-           
-        // do the requested action and display the next view
-        done = this.doAction(HufflepuffCharacterOption);  
-    } while (!done);
-    }
-
-    private String getHufflepuffCharacterOption() {
-      Scanner keyboard = new Scanner(System.in);
-      String value = "";
-      boolean valid = false;
-      
-      
-      //while a vaild name has not been retrieved
-      while(!valid){
-          System.out.println("\n" + this.promptMessage);
-          //get the value entered from the keyboard
-          value = keyboard.nextLine();
-          value = value.trim();
-          
-          if (value.length() < 1) { //blank value entered
-          System.out.println("\n Invalid selection *** Try again");
-          continue;
-          }
-          break;
-      }
-      return value;  
-    }
-
-    private boolean doAction(String hufflepuffCharacterOption) {
+    
+    @Override
+    public boolean doAction(String hufflepuffCharacterOption) {
       
         switch(hufflepuffCharacterOption){
             case "1":
@@ -101,46 +68,46 @@ class HufflepuffCharacterView {
         
         System.out.println("\n Welcome to the Quad Wizard Tournament Cedric. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void zachariasSmith() {
         System.out.println("\n Welcome to the Quad Wizard Tournament Zacharias. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void justinFinchFletchley() {
         System.out.println("\n Welcome to the Quad Wizard Tournament Justin. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void hannahLongbottom() {
         System.out.println("\n Welcome to the Quad Wizard Tournament Hannah. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void ernieMacmillan() {
        System.out.println("\n Welcome to the Quad Wizard Tournament Ernie. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void susanBones() {
         System.out.println("\n Welcome to the Quad Wizard Tournament Susan. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
 
     private void anthonyOtterburn() {
         System.out.println("\n Welcome to the Quad Wizard Tournament Anthony. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        gameMenu.display();
     }
     private void quit() {
         HouseMenuView houseMenu = new HouseMenuView();
-        houseMenu.displayHouseMenuView();
+        houseMenu.display();
     }
 }

@@ -30,6 +30,7 @@ public class MainMenuView extends View {
                   + "\n Please enter a valid value");
     }
 
+    @Override
     public boolean doAction(String choice){
 
         switch (choice){
@@ -58,7 +59,7 @@ public class MainMenuView extends View {
     private void startGame() {
         GameControl.createNewGame(Hogwarts.getPlayer());
         HouseMenuView houseMenu = new HouseMenuView();
-        houseMenu.displayHouseMenuView();
+        houseMenu.display();
         
     }
 
@@ -68,7 +69,7 @@ public class MainMenuView extends View {
 
     private void helpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {

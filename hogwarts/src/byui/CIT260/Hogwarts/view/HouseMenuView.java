@@ -13,12 +13,12 @@ import java.util.Scanner;
  *
  * @author rachelbarnes
  */
-public class HouseMenuView {
-    private String menu; 
+public class HouseMenuView extends View {
+   
     
    public HouseMenuView() {
 
-        this.menu = "\n---------------------------------------------"
+        super("\n---------------------------------------------"
                   + "\n| House Menu                                |"
                   + "\n---------------------------------------------"
                   + "\n1 - Gryffindor"
@@ -27,52 +27,10 @@ public class HouseMenuView {
                   + "\n4 - Ravenclaw"
                   + "\n5 - Main Menu"
                   + "\n---------------------------------------------"
-                  + "\n Please enter a valid value";
+                  + "\n Please enter a valid value");
     }
-
-    public void displayHouseMenuView() {
-
-        boolean notExit = true;
-        do {
-            // display then menu and get the menu option
-            String menuOption = this.getMenuOption();
-            
-            if (menuOption.equals("6")) {
-                notExit = false;
-                break;
-            }
-            
-            
-            // perform the command (action) for the menu option selected
-            notExit = this.doAction(menuOption);
-        } while (notExit);
-
-    }
-
-    private String getMenuOption() {
-
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-
-            System.out.println("\n" + this.menu);
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value cannot be blank");
-                continue;
-
-            }
-
-            valid = true;
-        }
-        return value;
-
-    }
-
+   
+   @Override
     public boolean doAction(String choice) {
 
         switch (choice) {
@@ -100,28 +58,28 @@ public class HouseMenuView {
 
     private void gryffindor() {
         GryffindorCharacterView gryffindorCharacter = new GryffindorCharacterView();
-        gryffindorCharacter.displayGryffindorCharacterView();
+        gryffindorCharacter.display();
     }
 
     private void slytherin() {
         SlytherinCharacterView slytherinCharacter = new SlytherinCharacterView();
-        slytherinCharacter.displaySlytherinCharacterView(); 
+        slytherinCharacter.display(); 
        
     }
 
     private void hufflepuff() {
         HufflepuffCharacterView hufflepuffCharacter = new HufflepuffCharacterView();
-        hufflepuffCharacter.displayHufflepuffCharacterView(); 
+        hufflepuffCharacter.display(); 
     }
 
     private void ravenclaw() {
         RavenclawView ravenclawCharacter = new RavenclawView();
-        ravenclawCharacter.displayRavenclawCharacterView();
+        ravenclawCharacter.display();
     }
 
     private void mainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
     
     

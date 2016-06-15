@@ -11,12 +11,11 @@ import java.util.Scanner;
  *
  * @author Mallory
  */
-public class HelpMenuView {
-  private String promptMessage;
-    private String help;
+public class HelpMenuView extends View {
+ 
     public HelpMenuView() {
-        this.promptMessage = "\n Please enter a valid value";
-        this.help = "\n"
+        super( "\n Please enter a valid value"
+                   
                   + "\n--------------------------"
                   + "\n | Help Menu             |"
                   + "\n--------------------------"
@@ -25,46 +24,11 @@ public class HelpMenuView {
                   + "\n 3 - Game Menu"
                   + "\n 4 - Main Menu"
                   + "\n 5 - Quit"
-                  + "\n--------------------------";
-    }
-    
-    public void displayHelpMenu() {
-        System.out.println("\n" + this.help);
-       boolean done = false;
-        do {
-           
-             String helpOption = this.getHelpOption();
-           
-            done = this.doAction(helpOption);
-        } while (!done);
-        
-        
-    }
-     private String getHelpOption() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            
-System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value cannot be blank");
-                continue;
-
-            }
-
-            break;
-        }
-        return value;
-
+                  + "\n--------------------------");
     }
 
-    private boolean doAction(String helpOption) {
+    @Override
+    public boolean doAction(String helpOption) {
         switch (helpOption){
             case "1":
                 this.goal();
@@ -100,17 +64,17 @@ System.out.println("\n" + this.promptMessage);
 
     private void gameMenu() {
        GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayGameMenu();
+       gameMenu.display();
     }
 
     private void mainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
 
     private void quit() {
       MainMenuView mainMenu = new MainMenuView();
-      mainMenu.displayMainMenuView();  
+      mainMenu.display();  
     }
 
    
