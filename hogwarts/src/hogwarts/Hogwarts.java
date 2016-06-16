@@ -24,7 +24,7 @@ public class Hogwarts {
         //create StartProgramView
         
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
     }
 
     public static Game getCurrentGame() {

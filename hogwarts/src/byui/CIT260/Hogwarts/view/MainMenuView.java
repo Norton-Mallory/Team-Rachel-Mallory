@@ -13,14 +13,12 @@ import java.util.Scanner;
  *
  * @author Mallory
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    private String menu;
-    private String promptMessage;
+   
 
     public MainMenuView() {
-        this.promptMessage = "\n Please enter a valid value";
-        this.menu = "\n---------------------------------------------"
+        super("\n---------------------------------------------"
                   + "\n| Main Menu                                 |"
                   + "\n---------------------------------------------"
                   + "\n1 - Start game"
@@ -28,46 +26,11 @@ public class MainMenuView {
                   + "\n3 - Help menu"
                   + "\n4 - Save game"
                   + "\n5 - Exit"
-                  + "\n---------------------------------------------";
+                  + "\n---------------------------------------------"
+                  + "\n Please enter a valid value");
     }
 
-    
-    public void displayMainMenuView() {
-        System.out.println("\n" + this.menu);
-        boolean done = false;
-        do {
-
-             String menuOption = this.getMenuOption();
-             
-            done = this.doAction(menuOption);
-        } while (!done);
-        
-            }
-            
-    private String getMenuOption() {
-
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-
-System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value cannot be blank");
-                continue;
-
-            }
-
-            break;
-        }
-        return value;
-
-    }
-
+    @Override
     public boolean doAction(String choice){
 
         switch (choice){
@@ -96,7 +59,7 @@ System.out.println("\n" + this.promptMessage);
     private void startGame() {
         GameControl.createNewGame(Hogwarts.getPlayer());
         HouseMenuView houseMenu = new HouseMenuView();
-        houseMenu.displayHouseMenuView();
+        houseMenu.display();
         
     }
 
@@ -106,7 +69,7 @@ System.out.println("\n" + this.promptMessage);
 
     private void helpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {

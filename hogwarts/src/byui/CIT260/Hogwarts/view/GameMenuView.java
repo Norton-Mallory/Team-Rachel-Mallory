@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author Mallory
  */
-public class GameMenuView {
-    private String promptMessage;
-    private String game;
+public class GameMenuView extends View {
+    
     public GameMenuView() {
-       this.promptMessage = ("\n Please enter a valid value");
-       this.game = ("\n"
+       super("\n Please enter a valid value"
                + "\n-------------------------------------------"
                + "\n | Game Menu                             | "
                + "\n-------------------------------------------"
@@ -33,42 +31,9 @@ public class GameMenuView {
                + "\n 11 - Quit"
                + "\n-------------------------------------------");
     }
-     public void displayGameMenu() {
-        System.out.println("\n" + this.game);
-        boolean done = false;
-        do {
-        // prompt for and get the game menu option
-        String gameMenuOption = this.getGameMenuOption();
-           
-        // do the requested action and display the next view
-        done = this.doAction(gameMenuOption);  
-    } while (!done);
-    }
-   
-    private String getGameMenuOption() {
-      Scanner keyboard = new Scanner(System.in);
-      String value = "";
-      boolean valid = false;
-      
-      
-      //while a vaild name has not been retrieved
-      while(!valid){
-          System.out.println("\n" + this.promptMessage);
-          //get the value entered from the keyboard
-          value = keyboard.nextLine();
-          value = value.trim();
-          
-          if (value.length() < 1) { //blank value entered
-          System.out.println("\n Invalid selection *** Try again");
-          continue;
-          }
-          break;
-      }
-      return value;  
-    }
     
-    
-    private boolean doAction(String gameMenuOption) {
+    @Override
+    public boolean doAction(String gameMenuOption) {
         switch(gameMenuOption){
             case "1":
                 this.viewMap();
@@ -117,17 +82,17 @@ public class GameMenuView {
 
     private void firstTask() {
         FirstTaskView firstTask = new FirstTaskView();
-        firstTask.displayFirstTaskView();
+        firstTask.display();
     }
 
     private void secondTask() {
         SecondTaskView secondTask = new SecondTaskView();
-        secondTask.displaySecondTaskView();
+        secondTask.display();
     }
 
     private void thirdTask() {
         ThirdTaskView thirdTask = new ThirdTaskView();
-        thirdTask.displayThirdTaskView();
+        thirdTask.display();
     }
 
     private void moveToNewLocation() {
@@ -152,12 +117,12 @@ public class GameMenuView {
 
     private void help() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void quit() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
 
     

@@ -14,12 +14,11 @@ import java.util.Scanner;
  *
  * @author rachelbarnes
  */
-public class FirstTaskView {
-    private String message;
+public class FirstTaskView extends View {
 
     public FirstTaskView() {
 
-        this.message = "\n---------------------------------------------"
+        super( "\n---------------------------------------------"
                 + "\n| First Task                                 |"
                 + "\n---------------------------------------------"
                 + "\n Welcome to the First Task of the Tournament!"
@@ -30,51 +29,9 @@ public class FirstTaskView {
                 + "\n---------------------------------------------"
                 + "\n Solve for the area of the top of the chest."
                 + "\n The base is 2 feet and the height is 4 feet."
-                + "\n Enter the area of the triangle.";
+                + "\n Enter the area of the triangle.");
     }
-
-    public void displayFirstTaskView() {
-
-        boolean done = false;
-        do {
-            // display the menu and get the menu option
-            String solution = this.getSolution();
-            
-            if (solution.equals("Q")) {
-                done = true;
-                break;
-            }
-            
-            // perform the command (action) for the menu option selected
-            done = this.doAction(solution);
-        } while (!done);
-
-    }
-
-    private String getSolution() {
-
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-
-            System.out.println("\n" + this.message);
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n Invalid value: value cannot be blank");
-                continue;
-
-            }
-
-            valid = true;
-        }
-        return value;
-
-    }
-
+    @Override
     public boolean doAction(String value) {
         double solution = Double.parseDouble(value);
         //determine if value is between boundaries
@@ -90,7 +47,7 @@ public class FirstTaskView {
             
            
        GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayGameMenu();
+       gameMenu.display();
     
         }
             //display error message and return false
