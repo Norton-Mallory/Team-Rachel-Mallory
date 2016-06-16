@@ -100,7 +100,8 @@ public class GameMenuView extends View {
     }
 
     private void viewNumberOfCoinsCollected() {
-        System.out.println("\n*** viewNumberOfCoinsCollected() function called  ***");
+        CoinsCollectedView coinsCollected = new CoinsCollectedView();
+        coinsCollected.display();
     }
 
     private void viewListOfToolsAcquired() {

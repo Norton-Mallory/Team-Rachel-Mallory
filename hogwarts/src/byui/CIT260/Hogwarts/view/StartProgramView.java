@@ -69,7 +69,7 @@ public class StartProgramView extends View {
          */
         if (playersName.length() < 2) {
             System.out.println("\n Invalid players name: "
-                    + "The name must be greater than on echaracter in length");
+                    + "The name must be greater than one character in length");
             return false;
         }
 

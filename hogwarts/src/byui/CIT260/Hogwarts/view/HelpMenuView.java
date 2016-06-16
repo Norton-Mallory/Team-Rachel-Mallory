@@ -14,9 +14,7 @@ import java.util.Scanner;
 public class HelpMenuView extends View {
  
     public HelpMenuView() {
-        super( "\n Please enter a valid value"
-                   
-                  + "\n--------------------------"
+        super("\n--------------------------"
                   + "\n | Help Menu             |"
                   + "\n--------------------------"
                   + "\n 1 - What is the goal of the game?"
@@ -24,7 +22,8 @@ public class HelpMenuView extends View {
                   + "\n 3 - Game Menu"
                   + "\n 4 - Main Menu"
                   + "\n 5 - Quit"
-                  + "\n--------------------------");
+                  + "\n--------------------------"
+                  + "\n Please enter a valid value");
     }
 
     @Override
@@ -54,7 +53,8 @@ public class HelpMenuView extends View {
 
 
     private void goal() {
-        System.out.println("\n*** goal() function called  ***");
+        ExplanationOfGoalView goalView = new ExplanationOfGoalView();
+        goalView.display();
     }
 
     private void howToMove() {

@@ -18,15 +18,15 @@ public class SecondTaskView extends View {
         super( "\n---------------------------------------------"
                 + "\n| First Task                                 |"
                 + "\n---------------------------------------------"
-                + "\n Welcome to the First Task of the Tournament!"
-                + "\n Your task is to get past the dragon."
-                + "\n The dragon is guarding a strange triangular chest"
-                + "\n Inside the chest is something that will help you"
-                + "\n in the next task!"
+                + "\n Welcome to the Second Task of the Tournament!"
+                + "\n Your task is to swim to the bottom of the Black Lake."
+                + "\n Your friend is being held captive by mermaids"
+                + "\n In order to free your friend, you must solve an equation."
+                + "\n "
                 + "\n---------------------------------------------"
-                + "\n Solve for the area of the top of the chest."
-                + "\n The base is 2 feet and the height is 4 feet."
-                + "\n Enter the area of the triangle.");
+                + "\n Solve for X in the following equation"
+                + "\n x^2-2x+1 = 0"
+                + "\n Enter the value.");
     }
     @Override
     public boolean doAction(String value) {
