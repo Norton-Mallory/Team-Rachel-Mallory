@@ -58,7 +58,8 @@ public class HelpMenuView extends View {
     }
 
     private void howToMove() {
-        System.out.println("\n*** howToMove() function called  ***");
+        HowToMoveView howToMove = new HowToMoveView();
+        howToMove.display();
        
     }
 

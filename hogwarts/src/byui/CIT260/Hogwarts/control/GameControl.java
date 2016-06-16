@@ -22,16 +22,15 @@ public class GameControl {
         player.setName(name);
         return player;
        
-    
+     
 
         
     }  
     
-    public static void saveCharacter (String name){
-        System.out.println("\n*** saveCharacterCalled stub function ***");
-    }
-
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame stub function ***");
+    }
+    public static void saveCharacter (String name){
+        System.out.println("\n*** saveCharacterCalled stub function ***");
     }
 }
