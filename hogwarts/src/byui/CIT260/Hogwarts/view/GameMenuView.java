@@ -108,7 +108,8 @@ public class GameMenuView extends View {
     }
 
     private void numberOfCoinsNeeded() {
-        System.out.println("\n*** numberOfCoindNeeded() function called  ***");
+        NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
+        numberOfCoinsNeeded.display();
     }
 
     private void saveGame() {
