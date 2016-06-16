@@ -14,8 +14,7 @@ import java.util.Scanner;
 public class GameMenuView extends View {
     
     public GameMenuView() {
-       super("\n Please enter a valid value"
-               + "\n-------------------------------------------"
+       super("\n-------------------------------------------"
                + "\n | Game Menu                             | "
                + "\n-------------------------------------------"
                + "\n 1 - View map"
@@ -29,7 +28,8 @@ public class GameMenuView extends View {
                + "\n 9 - Save game"
                + "\n 10 - Help"
                + "\n 11 - Quit"
-               + "\n-------------------------------------------");
+               + "\n-------------------------------------------"
+               + "\n Please enter a valid value");
     }
     
     @Override

@@ -16,7 +16,7 @@ public class SecondTaskView extends View {
     public SecondTaskView() {
 
         super( "\n---------------------------------------------"
-                + "\n| First Task                                 |"
+                + "\n| Second Task                                 |"
                 + "\n---------------------------------------------"
                 + "\n Welcome to the Second Task of the Tournament!"
                 + "\n Your task is to swim to the bottom of the Black Lake."
@@ -26,34 +26,24 @@ public class SecondTaskView extends View {
                 + "\n---------------------------------------------"
                 + "\n Solve for X in the following equation"
                 + "\n x^2-2x+1 = 0"
-                + "\n Enter the value.");
+                + "\n Enter the value 1");
     }
-    @Override
-    public boolean doAction(String value) {
-        double solution = Double.parseDouble(value);
-        //determine if value is between boundaries
-        boolean answer = TaskControl.checkArea(2, 4, solution);
-        //if not between boundaries then 
-        if (answer == false) {
-            System.out.println("\n Answer is incorrect. Try again.");
-            return false;
+   @Override
+    public boolean doAction(String quitMenu) {
+        switch (quitMenu){
+            case "1":
+                this.quit();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;    
         }
-        else {
-            System.out.println("\n Success! You were able to open the chest."
-                + "\n Inside you find a golden egg.");
-            
-           
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.display();
-    
-        }
-            //display error message and return false
-            
-        //else (between boundaries) then
-            //display success message and return true
-             
-    return true;
-    
-    
+        return false;
     }
+     
+    private void quit() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+    
 }
