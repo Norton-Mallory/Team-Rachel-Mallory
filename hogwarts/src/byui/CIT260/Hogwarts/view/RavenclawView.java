@@ -14,8 +14,9 @@ import java.util.Scanner;
 public class RavenclawView extends View {
   
     public RavenclawView() {
-        super("\n Please enter a valid value"
-                          +"\n-------------------------"
+        super(             "\n----------------------------"
+                          +"\n |    Ravenclaw Menu     | "
+                          +"\n----------------------------"
                           +"\n 1 - Luna Lovegood"
                           +"\n 2 - Cho Chang"
                           +"\n 3 - Roger Davies"
@@ -23,7 +24,8 @@ public class RavenclawView extends View {
                           +"\n 5 - Padma Patil"
                           +"\n 6 - Terry Boot"
                           +"\n 7 - Quit"
-                          +"\n-------------------------");
+                          +"\n----------------------------"
+                         + "\n Please enter a valid value");
     }
      
     @Override

@@ -15,7 +15,8 @@ class HufflepuffCharacterView extends View{
  
 
     public HufflepuffCharacterView() {
-        super("\n Please enter a valid value"
+        super(             "\n-----------------------------"    
+                          +"\n |     Hufflepuff Menu      |"   
                           +"\n-----------------------------"
                           +"\n 1 - Cedric Diggory"
                           +"\n 2 - Zacharias Smith"
@@ -25,7 +26,8 @@ class HufflepuffCharacterView extends View{
                           +"\n 6 - Susan Bones"
                           +"\n 7 - Anthony Otterburn"
                           +"\n 8 - Quit"
-                          +"\n-----------------------------");
+                          +"\n-----------------------------"
+                          +"\n Please enter a valid value");
     }
     
     @Override

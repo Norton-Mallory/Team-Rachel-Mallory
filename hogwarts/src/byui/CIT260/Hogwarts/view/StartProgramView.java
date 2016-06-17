@@ -46,7 +46,7 @@ public class StartProgramView extends View {
                 + "\n* if you would like to collect a coin or tool.             *"
                 + "\n* In some cases, obstacles will not have coins or          *"
                 + "\n* tools to be collected once overcome.                     *"
-                + "\n                                                           *"
+                + "\n*                                                          *"
                 + "\n* Once you have successfully completed all three tasks,    *"
                 + "\n* you will have won the Quad-Wizard tournament.            *"
                 + "\n* Good luck!                                               *"

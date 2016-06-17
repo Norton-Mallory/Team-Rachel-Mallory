@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class ThirdTaskView extends View {
    
     public ThirdTaskView() {
-        super("\n-----------------------------------------------"
+        super(   "\n-----------------------------------------------"
                 +"\n     |   Welcome to the Third Task    |"
                 +"\n-----------------------------------------------"
                 +"\n For this task you need to"

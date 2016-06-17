@@ -14,8 +14,9 @@ import java.util.Scanner;
 public class SlytherinCharacterView extends View {
 
     public SlytherinCharacterView() {
-        super("\n Please enter a valid value"
-                          +"\n------------------------"
+        super(             "\n---------------------------"
+                          +"\n |    Slytherin Menu     | "
+                          +"\n---------------------------"
                           +"\n 1 - Draco Malfoy"
                           +"\n 2 - Gregory Goyle"
                           +"\n 3 - Vincent Crabbe"
@@ -24,7 +25,8 @@ public class SlytherinCharacterView extends View {
                           +"\n 6 - Blaise Zabini"
                           +"\n 7 - Pansy Parkinson"
                           +"\n 8 - Quit"
-                          +"\n-----------------------");
+                          +"\n---------------------------"
+                          +"\n Please enter a valid value");
     }
     
     @Override

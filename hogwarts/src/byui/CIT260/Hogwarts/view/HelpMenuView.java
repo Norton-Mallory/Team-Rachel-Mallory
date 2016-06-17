@@ -14,15 +14,15 @@ import java.util.Scanner;
 public class HelpMenuView extends View {
  
     public HelpMenuView() {
-        super("\n--------------------------"
-                  + "\n | Help Menu             |"
-                  + "\n--------------------------"
+        super(      "\n------------------------------------"
+                  + "\n |          Help Menu             |"
+                  + "\n------------------------------------"
                   + "\n 1 - What is the goal of the game?"
                   + "\n 2 - How to move"
                   + "\n 3 - Game Menu"
                   + "\n 4 - Main Menu"
                   + "\n 5 - Quit"
-                  + "\n--------------------------"
+                  + "\n------------------------------------"
                   + "\n Please enter a valid value");
     }
 

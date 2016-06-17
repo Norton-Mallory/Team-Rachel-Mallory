@@ -13,13 +13,13 @@ public class ExplanationOfGoalView extends View {
     
     public ExplanationOfGoalView() {
 
-        super( "\n---------------------------------------------"
-                + "\n| Goal of Game                               |"
-                + "\n---------------------------------------------"
+        super(    "\n---------------------------------------------------------"
+                + "\n |                    Goal of Game                     |"
+                + "\n---------------------------------------------------------"
                 + "\n The object of the game is to collect coins which"
                 + "\n will enable you to unlock tasks of the Tournament."
                 + "\n Once all the tasks have been completed, you win the game!"
-                + "\n---------------------------------------------"
+                + "\n----------------------------------------------------------"
                 + "\n Enter 1 to return to the Help Menu.");
                 
     }

@@ -18,15 +18,15 @@ public class MainMenuView extends View {
    
 
     public MainMenuView() {
-        super("\n---------------------------------------------"
-                  + "\n| Main Menu                                 |"
-                  + "\n---------------------------------------------"
+        super(      "\n---------------------------"
+                  + "\n |       Main Menu        |"
+                  + "\n---------------------------"
                   + "\n1 - Start game"
                   + "\n2 - Restart existing game"
                   + "\n3 - Help menu"
                   + "\n4 - Save game"
                   + "\n5 - Exit"
-                  + "\n---------------------------------------------"
+                  + "\n---------------------------"
                   + "\n Please enter a valid value");
     }
 

@@ -18,15 +18,15 @@ public class HouseMenuView extends View {
     
    public HouseMenuView() {
 
-        super("\n---------------------------------------------"
-                  + "\n| House Menu                                |"
-                  + "\n---------------------------------------------"
-                  + "\n1 - Gryffindor"
-                  + "\n2 - Slytherin"
-                  + "\n3 - Hufflepuff"
-                  + "\n4 - Ravenclaw"
-                  + "\n5 - Main Menu"
-                  + "\n---------------------------------------------"
+        super(      "\n-----------------------------"
+                  + "\n |       House Menu        |"
+                  + "\n-----------------------------"
+                  + "\n 1 - Gryffindor"
+                  + "\n 2 - Slytherin"
+                  + "\n 3 - Hufflepuff"
+                  + "\n 4 - Ravenclaw"
+                  + "\n 5 - Main Menu"
+                  + "\n-----------------------------"
                   + "\n Please enter a valid value");
     }
    

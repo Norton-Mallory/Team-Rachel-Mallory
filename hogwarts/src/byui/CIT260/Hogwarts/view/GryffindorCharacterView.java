@@ -15,8 +15,9 @@ public class GryffindorCharacterView extends View {
   
 
     public GryffindorCharacterView() {
-        super ("\n Please enter a valid value"
-                          +"\n--------------------------"
+        super (            "\n---------------------------"
+                          +"\n |   Gryffindor Menu     |"
+                          +"\n---------------------------"
                           +"\n 1 - Harry Potter"
                           +"\n 2 - Ron Weasley"
                           +"\n 3 - Hermione Granger"
@@ -25,7 +26,8 @@ public class GryffindorCharacterView extends View {
                           +"\n 6 - Fred Weasley"
                           +"\n 7 - George Weasley"
                           +"\n 8 - Quit"
-                          +"\n--------------------------");
+                          +"\n---------------------------"
+                          +"\n Please enter a valid value");
     }
     
     @Override
