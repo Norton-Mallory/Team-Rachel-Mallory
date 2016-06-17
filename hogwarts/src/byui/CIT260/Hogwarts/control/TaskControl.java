@@ -75,6 +75,13 @@ public class TaskControl {
 
     }
     
-
-
+    public static boolean checkSolveForX(double x, double input) {
+        //calculate area of Cylinder
+        double check = TaskControl.solveForX(x);
+                
+        if (check == input) {
+            return true;
+        }
+        return false;
+    }
 }

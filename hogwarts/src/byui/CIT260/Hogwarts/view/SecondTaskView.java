@@ -19,31 +19,42 @@ public class SecondTaskView extends View {
                 + "\n  |              Second Task                |"
                 + "\n----------------------------------------------"
                 + "\n Welcome to the Second Task of the Tournament!"
-                + "\n Your task is to swim to the bottom of the "
-                + "\n Black Lake. Your friend is being held captive"
-                + "\n by mermaids. In order to free your friend, "
-                + "\n you must solve an equation."
-                + "\n----------------------------------------------"
-                + "\n Solve for X in the following equation"
-                + "\n x^2-2x+1 = 0"
-                + "\n Enter the value 1");
+                + "\n Your task is to swim to the bottom of the Black Lake."
+                + "\n Your friend is being held captive by mermaids"
+                + "\n In order to free your friend, you must solve an equation."
+                + "\n "
+                + "\n---------------------------------------------"
+                + "\n Solve, if x = 1"
+                + "\n x^2-2x+1"
+                + "\n Enter the value:");
     }
    @Override
-    public boolean doAction(String quitMenu) {
-        switch (quitMenu){
-            case "1":
-                this.quit();
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                break;    
+    public boolean doAction(String value) {
+        double solution = Double.parseDouble(value);
+        //determine if value is between boundaries
+        boolean answer = TaskControl.checkSolveForX(1, solution);
+        //if not between boundaries then 
+        if (answer == false) {
+            System.out.println("\n Answer is incorrect. Try again.");
+            return false;
         }
-        return false;
-    }
-     
-    private void quit() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        else {
+            System.out.println("\n Success! You made it past the mermaids"
+                    + "\n and rescued your friend.");
+            
+           
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.display();
+    
+        }
+            //display error message and return false
+            
+        //else (between boundaries) then
+            //display success message and return true
+             
+    return true;
+    
+    
     }
     
 }
