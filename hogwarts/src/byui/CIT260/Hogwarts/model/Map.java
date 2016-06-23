@@ -17,6 +17,8 @@ public class Map implements Serializable {
     private double numberOfRows;
     private double numberOfColumns;
     private String name;
+    private Map[][] maps;
+    
 
     public Map() {
     }
@@ -49,6 +51,10 @@ public class Map implements Serializable {
         this.name = name;
     }
 
+    public Map[][] getMaps() {
+        return maps;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;

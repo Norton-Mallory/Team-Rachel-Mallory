@@ -13,15 +13,16 @@ import java.util.Objects;
  * @author rachelbarnes
  */
 public class Item implements Serializable {
+    
     //class instance variables
     private String inventoryType;
     private double quantityInStock;
     private double requiredAmount;
-
+    private Game game;
+   
     public Item() {
+       
     }
-    
-    
 
     public String getInventoryType() {
         return inventoryType;
@@ -47,21 +48,23 @@ public class Item implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.inventoryType);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.inventoryType);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
         return hash;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
-    }
-
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -85,9 +88,11 @@ public class Item implements Serializable {
         }
         return true;
     }
-    
-    
-    
-            
+
+    @Override
+    public String toString() {
+        return "Item{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+    }
+       
     
 }

@@ -5,10 +5,21 @@
  */
 package byui.CIT260.Hogwarts.control;
 
+import byui.CIT260.Hogwarts.model.Map;
+
 /**
  *
  * @author rachelbarnes
  */
 public class MapControl {
+    
+    public static Map createMap() throws MapControlException {
+        //create the map
+        
+        Map map = null;
+        
+        System.out.println("\n*** createMap() called ***");
+        return map;
+    }
     
 }

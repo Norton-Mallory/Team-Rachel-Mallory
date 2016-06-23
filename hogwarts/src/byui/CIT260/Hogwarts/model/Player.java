@@ -16,6 +16,9 @@ public class Player implements Serializable{
     //class instance variables
     private String name;
     private double bestTime;
+    private Game game;
+    private House house;
+    private Character character;
 
     public Player() {
     }
@@ -38,6 +41,32 @@ public class Player implements Serializable{
         this.bestTime = bestTime;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+
+    
     @Override
     public int hashCode() {
         int hash = 3;

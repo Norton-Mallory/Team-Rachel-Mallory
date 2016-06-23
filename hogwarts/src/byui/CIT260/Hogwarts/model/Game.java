@@ -16,6 +16,9 @@ public class Game implements Serializable{
     //class instance variables
     private double startTime;
     private double endTime;
+    private Player player;
+    private Map map;
+    private Item[] items;
 
     public Game() {
     }
@@ -37,6 +40,33 @@ public class Game implements Serializable{
     public void setEndTime(double endTime) {
         this.endTime = endTime;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+    
+    
+    
 
     @Override
     public int hashCode() {

@@ -20,6 +20,8 @@ public class Location implements Serializable{
     private double amountRemaining;
     private String coins;
     private String type;
+    private Item[] items;
+    private Scene scene;
 
     public Location() {
     }
@@ -71,6 +73,20 @@ public class Location implements Serializable{
     public void setType(String type) {
         this.type = type;
     }
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    
 
     @Override
     public int hashCode() {
