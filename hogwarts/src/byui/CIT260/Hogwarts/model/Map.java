@@ -14,24 +14,43 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
     //class instance variables
-    private double numberOfRows;
-    private double numberOfColumns;
-    private String name;
-    private Map[][] maps;
+    private int numberOfRows;
+    private int numberOfColumns;
+    private Location[][] locations;
     
-
-    public Map() {
+public Map() {
     }
+    
+    public Map(int numberOfRows, int numberOfColumns){
+        if (numberOfRows < 1 || numberOfColumns < 1){
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        this.numberOfRows = numberOfRows;
+        this.numberOfColumns = numberOfColumns;
+        
+        //create 2-D array for location objects
+        this.locations = new Location[numberOfRows] [numberOfColumns];    }
+         
+        for(int row = 0; row < numberOfRows; row++){
+        for(int column = 0; column < numberOfColumns; column++){
+            //create and initialize new location object instance
+            Location location = new Location();
+            location.setColumn(column);
+            location.setRow(row);
+            location.setVisited(false);
+            
+            //assign the location object to the current position in array
+            locations[row][column] = location;
+        }
+}
     
     public double getNumberOfRows() {
         return numberOfRows;
     }
 
-    /**
-     *
-     * @param numberOfRows
-     */
-    public void setNumberOfRows(double numberOfRows) {
+    
+    public void setNumberOfRows(int numberOfRows) {
         this.numberOfRows = numberOfRows;
     }
 
@@ -39,34 +58,32 @@ public class Map implements Serializable {
         return numberOfColumns;
     }
 
-    public void setNumberOfColumns(double numberOfColumns) {
+    public void setNumberOfColumns(int numberOfColumns) {
         this.numberOfColumns = numberOfColumns;
     }
 
-    public String getName() {
-        return name;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
-    public Map[][] getMaps() {
-        return maps;
-    }
+  
     
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 53 * hash + Objects.hashCode(this.numberOfRows);
         hash = 53 * hash + Objects.hashCode(this.numberOfColumns);
-        hash = 53 * hash + Objects.hashCode(this.name);
+       
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "numberOfRows=" + numberOfRows + ", numberOfColumns=" + numberOfColumns + ", name=" + name + '}';
+        return "Map{" + "numberOfRows=" + numberOfRows + ", numberOfColumns=" + numberOfColumns + '}';
     }
     
 
@@ -88,9 +105,7 @@ public class Map implements Serializable {
         if (!Objects.equals(this.numberOfColumns, other.numberOfColumns)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
+        
         return true;
     }
     

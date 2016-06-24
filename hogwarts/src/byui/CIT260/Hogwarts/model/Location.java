@@ -5,7 +5,9 @@
  */
 package byui.CIT260.Hogwarts.model;
 
+import static byui.CIT260.Hogwarts.model.ItemEnum.coins;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -14,39 +16,41 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     //class instance variables
-    private String row;
-    private String column;
-    private String visited;
+    private int row;
+    private int column;
+    private boolean visited;
     private double amountRemaining;
     private String coins;
-    private String type;
+    
     private Item[] items;
     private Scene scene;
+    private ArrayList<Character> characters;
 
     public Location() {
     }
 
-    public String getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public String getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(String column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -66,13 +70,7 @@ public class Location implements Serializable{
         this.coins = coins;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+   
 
     public Item[] getItems() {
         return items;
@@ -96,7 +94,7 @@ public class Location implements Serializable{
         hash = 47 * hash + Objects.hashCode(this.visited);
         hash = 47 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
         hash = 47 * hash + Objects.hashCode(this.coins);
-        hash = 47 * hash + Objects.hashCode(this.type);
+        
         return hash;
     }
 
@@ -127,15 +125,13 @@ public class Location implements Serializable{
         if (!Objects.equals(this.coins, other.coins)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
+        
         return true;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", coins=" + coins + ", type=" + type + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", coins=" + coins +  '}';
     }
     
     

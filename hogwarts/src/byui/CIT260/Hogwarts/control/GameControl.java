@@ -8,8 +8,11 @@ package byui.CIT260.Hogwarts.control;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.ItemEnum;
+import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
+import byui.CIT260.Hogwarts.model.Scene;
+import byui.CIT260.Hogwarts.model.SceneType;
 import hogwarts.Hogwarts;
 
 /**
@@ -88,5 +91,39 @@ public class GameControl {
         
         return null;
     }
+   
     
+    static void assignScenesToLocations(Map map, Scene[] scenes){
+        Location [][] locations = map.getLocations();
+        
+        //start point
+        
+        locations[1][1].setScene(scenes[SceneType.mcgonagall_office.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.gryffindor_dormitory.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.chamber_of_secrets.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.green_houses.ordinal()]);
+        locations[1][5].setScene(scenes[SceneType.black_lake.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.classroom.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.stairway.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.library.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.hagrids_hut.ordinal()]);
+        locations[2][5].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.dumbledore_office.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.great_hall.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.quidditch_field.ordinal()]);
+        locations[3][5].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.girls_lavatory.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.hospital_wing.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.classroom.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[4][5].setScene(scenes[SceneType.front_walk.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.room_of_requirement.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.snape_office.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.slytherin_dormitory.ordinal()]);
+        locations[5][4].setScene(scenes[SceneType.dungeon.ordinal()]);
+        locations[5][5].setScene(scenes[SceneType.garden.ordinal()]);
+
+        
+    }
 }
