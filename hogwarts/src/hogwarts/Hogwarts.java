@@ -42,5 +42,9 @@ public class Hogwarts {
     public static void setPlayer(Player player) {
         Hogwarts.player = player;
     }
+
+    public static Game getCreateMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

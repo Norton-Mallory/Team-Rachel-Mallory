@@ -19,10 +19,8 @@ public class Location implements Serializable{
     private int row;
     private int column;
     private boolean visited;
-    private double amountRemaining;
-    private String coins;
-    
-    private Item[] items;
+   
+    private Item item;
     private Scene scene;
     private ArrayList<Character> characters;
 
@@ -53,27 +51,13 @@ public class Location implements Serializable{
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
-
-    public double getAmountRemaining() {
-        return amountRemaining;
+    
+    public Item getItem() {
+        return item;
     }
 
-    public void setAmountRemaining(double amountRemaining) {
-        this.amountRemaining = amountRemaining;
-    }
-
-    public String getCoins() {
-        return coins;
-    }
-
-    public void setCoins(String coins) {
-        this.coins = coins;
-    }
-
-   
-
-    public Item[] getItems() {
-        return items;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public Scene getScene() {
@@ -84,17 +68,15 @@ public class Location implements Serializable{
         this.scene = scene;
     }
 
-    
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + Objects.hashCode(this.row);
-        hash = 47 * hash + Objects.hashCode(this.column);
-        hash = 47 * hash + Objects.hashCode(this.visited);
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
-        hash = 47 * hash + Objects.hashCode(this.coins);
-        
+        int hash = 7;
+        hash = 71 * hash + this.row;
+        hash = 71 * hash + this.column;
+        hash = 71 * hash + (this.visited ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.item);
+        hash = 71 * hash + Objects.hashCode(this.scene);
+        hash = 71 * hash + Objects.hashCode(this.characters);
         return hash;
     }
 
@@ -110,30 +92,32 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (!Objects.equals(this.row, other.row)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (!Objects.equals(this.column, other.column)) {
+        if (this.visited != other.visited) {
             return false;
         }
-        if (!Objects.equals(this.visited, other.visited)) {
+        if (!Objects.equals(this.item, other.item)) {
             return false;
         }
-        if (!Objects.equals(this.coins, other.coins)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
-        
+        if (!Objects.equals(this.characters, other.characters)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + ", coins=" + coins +  '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", item=" + item + ", scene=" + scene + ", characters=" + characters + '}';
     }
-    
+
     
     
 }

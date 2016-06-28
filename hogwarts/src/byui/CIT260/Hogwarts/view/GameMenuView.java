@@ -5,6 +5,12 @@
  */
 package byui.CIT260.Hogwarts.view;
 
+import byui.CIT260.Hogwarts.model.Game;
+import byui.CIT260.Hogwarts.model.Item;
+import byui.CIT260.Hogwarts.model.Location;
+import byui.CIT260.Hogwarts.model.Map;
+import byui.CIT260.Hogwarts.model.Scene;
+import hogwarts.Hogwarts;
 import java.util.Scanner;
 
 /**
@@ -77,7 +83,28 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println("\n*** viewMap() function called  ***");
+       
+        Game game = Hogwarts.getCurrentGame();
+        Map map = game.getMap();
+        Location[][] locations = map.getLocations();
+        
+        System.out.println("----------Hogwarts Map-----------");
+        System.out.print("1    2     3     4     5");
+        
+        for (int row = 0; row < map.getNumberOfRows(); row++) {
+            System.out.println("\n-----------------------------");
+            System.out.println(row);
+            for (int column = 0; column < map.getNumberOfColumns(); column++) {
+                //create and initialize new location object instance
+                System.out.print(" | ");
+                Location location = locations[row][column];
+                System.out.print(location.getScene().getMapSymbol());
+
+          
+            }
+            System.out.println(" | ");
+        }
+        System.out.println("-------------------------------");
     }
 
     private void firstTask() {
@@ -105,7 +132,27 @@ public class GameMenuView extends View {
     }
 
     private void viewListOfToolsAcquired() {
-        System.out.println("\n*** viewListOfToolsAcquired() function called  ***");
+        StringBuilder line;
+        
+        Game game = Hogwarts.getCurrentGame();
+        Item[] items = game.getItems();
+        
+        System.out.println("\n     LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                               ");
+        line.insert(0, "INVENTORY TYPE");
+        line.insert(20, "QUANTITY IN STOCK");
+        line.insert(40, "REQUIRED AMOUNT");
+        System.out.println(line.toString());
+        
+        for (Item itemEnum : items) {
+            line = new StringBuilder ("                          ");
+            line.insert(0, itemEnum.getInventoryType());
+            line.insert(23, itemEnum.getQuantityInStock());
+            line.insert(33, itemEnum.getRequiredAmount());
+            
+            
+            System.out.println(line.toString());
+        }
     }
 
     private void numberOfCoinsNeeded() {
