@@ -126,4 +126,14 @@ public class GameControl {
 
         
     }
+    
+    //possible way to write the code to display the map
+    
+ 
+    
+    
+    
+    
+    
+    
 }

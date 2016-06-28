@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +6,9 @@
  */
 package byui.CIT260.Hogwarts.view;
 
+import byui.CIT260.Hogwarts.model.Game;
+import byui.CIT260.Hogwarts.model.Map;
+import hogwarts.Hogwarts;
 import java.util.Scanner;
 
 /**
@@ -77,7 +81,8 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println("\n*** viewMap() function called  ***");
+        System.out.println("\n *** stub function called");
+        
     }
 
     private void firstTask() {
