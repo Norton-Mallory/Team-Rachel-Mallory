@@ -33,10 +33,11 @@ public class GameMenuView extends View {
                + "\n 6 - View number of coins collected"
                + "\n 7 - View list of items needed"
                + "\n 8 - Total items"
-               + "\n 9 - Number of coins needed"
-               + "\n 10 - Save game"
-               + "\n 11 - Help"
-               + "\n 12 - Quit"
+               + "\n 9 - Find how many characters in a house"
+               + "\n 10 - Number of coins needed"
+               + "\n 11 - Save game"
+               + "\n 12 - Help"
+               + "\n 13 - Quit"
                + "\n-------------------------------------------"
                + "\n Please enter a valid value");
     }
@@ -69,15 +70,17 @@ public class GameMenuView extends View {
                  this.totalItems();
                  break;
             case "9":
+                 this.totalInHouse();
+                 break;
+            case "10":
                 this.numberOfCoinsNeeded();
                 break;
-            case "10":
-                this.saveGame();
-                break;
             case "11":
+                this.saveGame();
+            case "12":
                 this.help();
                 break;
-            case "12":
+            case "13":
                 this.quit();
                 break;
              default:
@@ -167,6 +170,11 @@ public class GameMenuView extends View {
      NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
         numberOfCoinsNeeded.display();
     }
+    
+    private void totalInHouse() {
+        TotalInHouse totalInHouse = new TotalInHouse();
+        totalInHouse.display();
+    }
 
     private void saveGame() {
         System.out.println("\n*** saveGame() function called  ***");
@@ -189,7 +197,7 @@ public class GameMenuView extends View {
         Item[] item = game.getItems();
         
         int total = GameControl.totalItems(item);
-        System.out.println(total);
+        System.out.println("\n There are  " + total + " items in the Item list");
     }
 
     
