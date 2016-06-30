@@ -31,9 +31,10 @@ public class GameMenuView extends View {
                + "\n 6 - View number of coins collected"
                + "\n 7 - View list of tools acquired"
                + "\n 8 - Number of coins needed for each task"
-               + "\n 9 - Save game"
-               + "\n 10 - Help"
-               + "\n 11 - Quit"
+               + "\n 9 - Find how many characters in a house"
+               + "\n 10 - Save game"
+               + "\n 11 - Help"
+               + "\n Q - Quit"
                + "\n-------------------------------------------"
                + "\n Please enter a valid value");
     }
@@ -66,12 +67,15 @@ public class GameMenuView extends View {
                 this.numberOfCoinsNeeded();
                 break;
             case "9":
-                this.saveGame();
+                this.totalInHouse();
                 break;
             case "10":
-                this.help();
+                this.saveGame();
                 break;
             case "11":
+                this.help();
+                break;
+            case "Q":
                 this.quit();
                 break;
              default:
@@ -158,6 +162,11 @@ public class GameMenuView extends View {
     private void numberOfCoinsNeeded() {
         NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
         numberOfCoinsNeeded.display();
+    }
+    
+    private void totalInHouse() {
+        TotalInHouse totalInHouse = new TotalInHouse();
+        totalInHouse.display();
     }
 
     private void saveGame() {
