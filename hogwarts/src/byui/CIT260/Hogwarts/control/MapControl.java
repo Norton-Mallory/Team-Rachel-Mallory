@@ -5,6 +5,7 @@
  */
 package byui.CIT260.Hogwarts.control;
 
+import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Scene;
 import byui.CIT260.Hogwarts.model.SceneType;
@@ -23,12 +24,12 @@ public class MapControl {
         Scene[] scenes = createScenes();
         
         //assign scenes to locations
-        GameControl.assignScenesToLocations(map, scenes );
+        assignScenesToLocations(map, scenes);
         
         return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
         
         Scene mcgonagallOfficeScene = new Scene();
@@ -166,8 +167,41 @@ public class MapControl {
         return scenes;
     }
 
+    static void assignScenesToLocations(Map map, Scene[] scenes){
+        Location [][] locations = map.getLocations();
+        
+        //start point
+        
+        locations[0][0].setScene(scenes[SceneType.mcgonagall_office.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.gryffindor_dormitory.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.chamber_of_secrets.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.green_houses.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.black_lake.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.classroom.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.stairway.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.library.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.hagrids_hut.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.dumbledore_office.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.great_hall.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.quidditch_field.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.girls_lavatory.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.hospital_wing.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.classroom.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.hallway.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.front_walk.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.room_of_requirement.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.snape_office.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.slytherin_dormitory.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.dungeon.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.garden.ordinal()]);
+
+    }
+    
     static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n *** moveActors() function called ***");
     }
 
    

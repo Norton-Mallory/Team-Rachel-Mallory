@@ -6,6 +6,8 @@
 package byui.CIT260.Hogwarts.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -14,33 +16,14 @@ import java.io.Serializable;
 public class Game implements Serializable{
     
     //class instance variables
-    private double startTime;
-    private double endTime;
     private Player player;
     private Map map;
     private Item[] items;
+    
 
     public Game() {
     }
     
-    
-
-    public double getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(double startTime) {
-        this.startTime = startTime;
-    }
-
-    public double getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(double endTime) {
-        this.endTime = endTime;
-    }
-
     public Player getPlayer() {
         return player;
     }
@@ -64,24 +47,18 @@ public class Game implements Serializable{
     public void setItems(Item[] items) {
         this.items = items;
     }
-    
-    
+
+ 
     
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.startTime) ^ (Double.doubleToLongBits(this.startTime) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.endTime) ^ (Double.doubleToLongBits(this.endTime) >>> 32));
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.player);
+        hash = 67 * hash + Objects.hashCode(this.map);
+        hash = 67 * hash + Arrays.deepHashCode(this.items);
         return hash;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "startTime=" + startTime + ", endTime=" + endTime + '}';
-    }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -95,14 +72,22 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.startTime) != Double.doubleToLongBits(other.startTime)) {
+        if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.endTime) != Double.doubleToLongBits(other.endTime)) {
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.items, other.items)) {
             return false;
         }
         return true;
     }
-            
+
+    @Override
+    public String toString() {
+        return "Game{" + "player=" + player + ", map=" + map + ", items=" + items + '}';
+    }
     
+      
 }

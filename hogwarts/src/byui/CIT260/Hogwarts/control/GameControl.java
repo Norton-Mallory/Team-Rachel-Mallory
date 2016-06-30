@@ -5,6 +5,7 @@
  */
 package byui.CIT260.Hogwarts.control;
 
+
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.ItemEnum;
@@ -33,6 +34,28 @@ public class GameControl {
         
     }  
     
+    public static int totalItems(Item[] items){
+        
+        if(items.length > 6){
+            
+            return -1;
+        }
+           
+        int total = 0;  
+        for (Item item : items){
+            
+            total +=  1;
+            
+           
+        }
+            
+         return total;
+    }
+        
+  
+          
+
+    
     public static void createNewGame(Player player) {
         Game game = new Game();
         Hogwarts.setCurrentGame(game);
@@ -41,6 +64,8 @@ public class GameControl {
         
         Item[] itemList = GameControl.createItemList();
         game.setItems(itemList);
+        
+        
         
         Map map = MapControl.createMap();
         game.setMap(map);
@@ -79,8 +104,8 @@ public class GameControl {
         
         Item coins = new Item();
         coins.setInventoryType("Coins");
-        coins.setQuantityInStock(30);
-        coins.setRequiredAmount(30);
+        coins.setQuantityInStock(19);
+        coins.setRequiredAmount(19);
         items[ItemEnum.coins.ordinal()] = coins;
         
         Item trophy = new Item();
@@ -89,51 +114,39 @@ public class GameControl {
         trophy.setRequiredAmount(1);
         items[ItemEnum.trophy.ordinal()] = trophy;
         
-        return null;
+        return items;
     }
+  
    
-    
-    static void assignScenesToLocations(Map map, Scene[] scenes){
+        static void assignItemsToLocations(Map map, Item[] items){
         Location [][] locations = map.getLocations();
         
-        //start point
+        //start pointlocations[0][0].setScene(scenes[SceneType.mcgonagall_office.ordinal()]);
+        locations[0][1].setItem(items[ItemEnum.broomstick.ordinal()]);
+        locations[0][2].setItem(items[ItemEnum.wand.ordinal()]);
+        locations[0][3].setItem(items[ItemEnum.gillyweed.ordinal()]);
+        locations[0][4].setItem(items[ItemEnum.golden_egg.ordinal()]);
+        locations[1][0].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[1][1].setItem(items[ItemEnum.trophy.ordinal()]);
+        locations[1][2].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[1][3].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[1][4].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[2][0].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[2][1].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[2][2].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[2][3].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[2][4].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[3][0].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[3][1].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[3][2].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[3][3].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[3][4].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[4][0].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[4][1].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[4][2].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[4][3].setItem(items[ItemEnum.coins.ordinal()]);
+        locations[4][4].setItem(items[ItemEnum.coins.ordinal()]);
+        }
         
-        locations[1][1].setScene(scenes[SceneType.mcgonagall_office.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.gryffindor_dormitory.ordinal()]);
-        locations[1][3].setScene(scenes[SceneType.chamber_of_secrets.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.green_houses.ordinal()]);
-        locations[1][5].setScene(scenes[SceneType.black_lake.ordinal()]);
-        locations[2][1].setScene(scenes[SceneType.classroom.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.stairway.ordinal()]);
-        locations[2][3].setScene(scenes[SceneType.library.ordinal()]);
-        locations[2][4].setScene(scenes[SceneType.hagrids_hut.ordinal()]);
-        locations[2][5].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
-        locations[3][1].setScene(scenes[SceneType.dumbledore_office.ordinal()]);
-        locations[3][2].setScene(scenes[SceneType.hallway.ordinal()]);
-        locations[3][3].setScene(scenes[SceneType.great_hall.ordinal()]);
-        locations[3][4].setScene(scenes[SceneType.quidditch_field.ordinal()]);
-        locations[3][5].setScene(scenes[SceneType.forbidden_forest.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.girls_lavatory.ordinal()]);
-        locations[4][2].setScene(scenes[SceneType.hospital_wing.ordinal()]);
-        locations[4][3].setScene(scenes[SceneType.classroom.ordinal()]);
-        locations[4][4].setScene(scenes[SceneType.hallway.ordinal()]);
-        locations[4][5].setScene(scenes[SceneType.front_walk.ordinal()]);
-        locations[5][1].setScene(scenes[SceneType.room_of_requirement.ordinal()]);
-        locations[5][2].setScene(scenes[SceneType.snape_office.ordinal()]);
-        locations[5][3].setScene(scenes[SceneType.slytherin_dormitory.ordinal()]);
-        locations[5][4].setScene(scenes[SceneType.dungeon.ordinal()]);
-        locations[5][5].setScene(scenes[SceneType.garden.ordinal()]);
-
         
-    }
-    
-    //possible way to write the code to display the map
-    
- 
-    
-    
-    
-    
-    
-    
 }
