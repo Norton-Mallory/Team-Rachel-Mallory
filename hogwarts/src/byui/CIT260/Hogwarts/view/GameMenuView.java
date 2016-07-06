@@ -11,9 +11,7 @@ import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
-import byui.CIT260.Hogwarts.model.Scene;
 import hogwarts.Hogwarts;
-import java.util.Scanner;
 
 /**
  *

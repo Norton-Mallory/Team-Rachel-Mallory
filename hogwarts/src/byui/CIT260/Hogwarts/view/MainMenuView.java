@@ -6,6 +6,7 @@
 package byui.CIT260.Hogwarts.view;
 
 import byui.CIT260.Hogwarts.control.GameControl;
+import byui.CIT260.Hogwarts.exceptions.MapControlException;
 import hogwarts.Hogwarts;
 import java.util.Scanner;
 
@@ -57,7 +58,11 @@ public class MainMenuView extends View {
     }
 
     private void startGame() {
-        GameControl.createNewGame(Hogwarts.getPlayer());
+        try {
+            GameControl.createNewGame(Hogwarts.getPlayer());
+        } catch (MapControlException mce) {
+            System.out.println(mce.getMessage());
+        }
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.display();
         
