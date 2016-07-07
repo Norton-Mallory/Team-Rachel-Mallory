@@ -7,6 +7,7 @@
 package byui.CIT260.Hogwarts.view;
 
 import byui.CIT260.Hogwarts.control.GameControl;
+import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.Location;
@@ -20,31 +21,33 @@ import java.util.Scanner;
  * @author Mallory
  */
 public class GameMenuView extends View {
-    
+
     public GameMenuView() {
-       super(    "\n-------------------------------------------"
-               + "\n | Game Menu                             | "
-               + "\n-------------------------------------------"
-               + "\n 1 - View map"
-               + "\n 2 - First task"
-               + "\n 3 - Second task"
-               + "\n 4 - Third task"
-               + "\n 5 - Move to new location"
-               + "\n 6 - View number of coins collected"
-               + "\n 7 - View list of items needed"
-               + "\n 8 - Total items"
-               + "\n 9 - Find how many characters in a house"
-               + "\n 10 - Number of coins needed"
-               + "\n 11 - Save game"
-               + "\n 12 - Help"
-               + "\n 13 - Quit"
-               + "\n-------------------------------------------"
-               + "\n Please enter a valid value");
+        super("\n-------------------------------------------"
+                + "\n | Game Menu                             | "
+                + "\n-------------------------------------------"
+                + "\n 1 - View map"
+                + "\n 2 - First task"
+                + "\n 3 - Second task"
+                + "\n 4 - Third task"
+                + "\n 5 - Move to new location"
+                + "\n 6 - View number of coins collected"
+                + "\n 7 - View list of items needed"
+                + "\n 8 - Total items"
+                + "\n 9 - Find how many characters in a house"
+                + "\n 10 - Number of coins needed"
+                + "\n 11 - Save game"
+                + "\n 12 - Help"
+                + "\n 13 - Quit"
+                + "\n-------------------------------------------"
+                + "\n Please enter a valid value");
     }
-    
+
     @Override
+
     public boolean doAction(String gameMenuOption) {
-        switch(gameMenuOption){
+
+        switch (gameMenuOption) {
             case "1":
                 this.viewMap();
                 break;
@@ -67,11 +70,11 @@ public class GameMenuView extends View {
                 this.viewListOfItems();
                 break;
             case "8":
-                 this.totalItems();
-                 break;
+                this.totalItems();
+                break;
             case "9":
-                 this.totalInHouse();
-                 break;
+                this.totalInHouse();
+                break;
             case "10":
                 this.numberOfCoinsNeeded();
                 break;
@@ -83,23 +86,23 @@ public class GameMenuView extends View {
             case "13":
                 this.quit();
                 break;
-             default:
+            default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                break; 
-           
+                break;
+
         }
         return false;
     }
 
     private void viewMap() {
-       
+
         Game game = Hogwarts.getCurrentGame();
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
-        
+
         System.out.println("-----------Hogwarts Map-------------");
-        System.out.print(  "1     2      3      4      5");
-        
+        System.out.print("1     2      3      4      5");
+
         for (int row = 0; row < map.getNumberOfRows(); row++) {
             System.out.println("\n-----------------------------");
             System.out.println(row);
@@ -109,7 +112,6 @@ public class GameMenuView extends View {
                 Location location = locations[row][column];
                 System.out.print(location.getScene().getMapSymbol());
 
-          
             }
             System.out.println(" | ");
         }
@@ -142,38 +144,37 @@ public class GameMenuView extends View {
 
     private void viewListOfItems() {
         StringBuilder line;
-        
+
         Game game = Hogwarts.getCurrentGame();
         Item[] items = game.getItems();
-        
+
         System.out.println("\n     LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                               ");
         line.insert(0, "INVENTORY TYPE");
         line.insert(20, "QUANTITY IN STOCK");
         line.insert(40, "REQUIRED AMOUNT");
         System.out.println(line.toString());
-        
+
         for (Item itemEnum : items) {
-            line = new StringBuilder ("                          ");
+            line = new StringBuilder("                          ");
             line.insert(0, itemEnum.getInventoryType());
             line.insert(23, itemEnum.getQuantityInStock());
             line.insert(33, itemEnum.getRequiredAmount());
-            
-            
+
             System.out.println(line.toString());
         }
-        
-        
+
     }
 
     private void numberOfCoinsNeeded() {
-     NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
+        NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
         numberOfCoinsNeeded.display();
     }
-    
-    private void totalInHouse() {
+
+    private void totalInHouse()  {
         TotalInHouse totalInHouse = new TotalInHouse();
         totalInHouse.display();
+
     }
 
     private void saveGame() {
@@ -190,19 +191,20 @@ public class GameMenuView extends View {
         mainMenu.display();
     }
 
-
     private void totalItems() {
-        Game game = Hogwarts.getCurrentGame();
-        
-        Item[] item = game.getItems();
-        
-        int total = GameControl.totalItems(item);
-        System.out.println("\n There are  " + total + " items in the Item list");
+
+        try {
+            Game game = Hogwarts.getCurrentGame();
+
+            Item[] item = game.getItems();
+
+            int total = GameControl.totalItems(item);
+            System.out.println("\n There are  " + total + " items in the Item list");
+            
+        } catch (GameControlException gce) {
+            System.out.println(gce.getMessage());
+            System.out.println("\n Invalid item please try again");
+        }
     }
 
-    
-
-   
-
-    
 }
