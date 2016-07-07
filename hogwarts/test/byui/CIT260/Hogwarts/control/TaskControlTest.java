@@ -5,6 +5,7 @@
  */
 package byui.CIT260.Hogwarts.control;
 
+import byui.CIT260.Hogwarts.exceptions.TaskControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class TaskControlTest {
      * Test of calcAreaOfTriangle method, of class TaskControl.
      */
     @Test
-    public void testCalcAreaOfTriangle() {
+    public void testCalcAreaOfTriangle() throws TaskControlException {
         System.out.println("calcAreaOfTriangle");
         System.out.println("Test case 1");
         double base = 20;
@@ -84,7 +85,7 @@ public class TaskControlTest {
     /* Test of solveForX method, of class TaskControl.
      */
     @Test
-    public void testSolveForX() {
+    public void testSolveForX() throws TaskControlException {
         System.out.println("solveForX");
         System.out.println("test case 1");
         double x = 5;
@@ -126,7 +127,7 @@ public class TaskControlTest {
      * Test of calcAreaOfCylinder method, of class TaskControl.
      */
     @Test
-    public void testCalcAreaOfCylinder() {
+    public void testCalcAreaOfCylinder() throws TaskControlException {
         System.out.println("calcAreaOfCylinder");
         //test case 1
         System.out.println("Test case 1");

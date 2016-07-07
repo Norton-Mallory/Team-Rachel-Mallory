@@ -6,6 +6,7 @@
 package byui.CIT260.Hogwarts.control;
 
 
+import byui.CIT260.Hogwarts.exceptions.MapControlException;
 import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.House;
@@ -74,7 +75,7 @@ public class GameControl {
     }
 
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException{
         Game game = new Game();
         Hogwarts.setCurrentGame(game);
 
