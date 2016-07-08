@@ -45,18 +45,14 @@ public class ThirdTaskView extends View {
             double solution = Double.parseDouble(value);
             TaskControl.checkCylinderArea(8, 10, solution);
         } catch (NumberFormatException nfe) {
-            System.out.println("Letter is not a valid answer. ");
+            ErrorView.display(this.getClass().getName(),"Letter is not a valid answer. ");
             return false;
         } catch (TaskControlException tce) {
-            System.out.println(tce.getMessage());
+            ErrorView.display(this.getClass().getName(),tce.getMessage());
             return false;
         }
-        //if (answer == false) {
-        //    System.out.println("\n Answer is incorrect. Try again.");
-        //    return false;
-        //}
-        //else {
-        System.out.println("\n Success! The cylinder has been opened."
+       
+        this.console.println("\n Success! The cylinder has been opened."
                 + "\n Inside is the Quad Wizard Tournament trophy. "
                 + "\n Congratulations, you have won the game!");
 

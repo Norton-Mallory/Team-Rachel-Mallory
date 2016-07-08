@@ -82,7 +82,7 @@ public class GameMenuView extends View {
                 this.quit();
                 break;
              default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break; 
            
         }
@@ -95,23 +95,23 @@ public class GameMenuView extends View {
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
         
-        System.out.println("-----------Hogwarts Map-------------");
-        System.out.print(  "1     2      3      4      5");
+        this.console.println("-----------Hogwarts Map-------------");
+        this.console.print(  "1     2      3      4      5");
         
         for (int row = 0; row < map.getNumberOfRows(); row++) {
-            System.out.println("\n-----------------------------");
-            System.out.println(row);
+            this.console.println("\n-----------------------------");
+            this.console.println(row);
             for (int column = 0; column < map.getNumberOfColumns(); column++) {
                 //create and initialize new location object instance
-                System.out.print(" | ");
+                this.console.print(" | ");
                 Location location = locations[row][column];
-                System.out.print(location.getScene().getMapSymbol());
+                this.console.print(location.getScene().getMapSymbol());
 
           
             }
-            System.out.println(" | ");
+            this.console.println(" | ");
         }
-        System.out.println("-------------------------------");
+        this.console.println("-------------------------------");
     }
 
     private void firstTask() {
@@ -130,7 +130,7 @@ public class GameMenuView extends View {
     }
 
     private void moveToNewLocation() {
-        System.out.println("\n*** moveToNewLocation() function called  ***");
+        this.console.println("\n*** moveToNewLocation() function called  ***");
     }
 
     private void viewNumberOfCoinsCollected() {
@@ -144,12 +144,12 @@ public class GameMenuView extends View {
         Game game = Hogwarts.getCurrentGame();
         Item[] items = game.getItems();
         
-        System.out.println("\n     LIST OF INVENTORY ITEMS");
+        this.console.println("\n     LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                               ");
         line.insert(0, "INVENTORY TYPE");
         line.insert(20, "QUANTITY IN STOCK");
         line.insert(40, "REQUIRED AMOUNT");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         
         for (Item itemEnum : items) {
             line = new StringBuilder ("                          ");
@@ -158,7 +158,7 @@ public class GameMenuView extends View {
             line.insert(33, itemEnum.getRequiredAmount());
             
             
-            System.out.println(line.toString());
+            this.console.println(line.toString());
         }
         
         
@@ -175,7 +175,7 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() function called  ***");
+        this.console.println("\n*** saveGame() function called  ***");
     }
 
     private void help() {
@@ -195,7 +195,7 @@ public class GameMenuView extends View {
         Item[] item = game.getItems();
         
         int total = GameControl.totalItems(item);
-        System.out.println("\n There are  " + total + " items in the Item list");
+        this.console.println("\n There are  " + total + " items in the Item list");
     }
 
     

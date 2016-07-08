@@ -43,20 +43,14 @@ public class FirstTaskView extends View {
             double solution = Double.parseDouble(value);
             TaskControl.checkArea(2, 4, solution);
         } catch (NumberFormatException nfe) {
-            System.out.println("Letter is not a valid answer. ");
+            ErrorView.display(this.getClass().getName(),"Letter is not a valid answer. ");
             return false;          
         } catch (TaskControlException tce) {
-            System.out.println(tce.getMessage());
+            ErrorView.display(this.getClass().getName(),tce.getMessage());
             return false;
         } 
-        //boolean answer = TaskControl.checkArea(2, 4, solution);
-        //if not between boundaries then 
-        //if (answer == false) {
-        //    System.out.println("\n Answer is incorrect. Try again.");
-        //    return false;
-        //}
-        //else {
-        System.out.println("\n Success! You were able to open the chest."
+        
+        this.console.println("\n Success! You were able to open the chest."
                 + "\n Inside you find a golden egg.");
 
         GameMenuView gameMenu = new GameMenuView();

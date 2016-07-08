@@ -22,7 +22,7 @@ public class StartProgramView extends View {
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
                   "\n************************************************************"
                 + "\n*                                                          *"
                 + "\n* This is the game of The Quad Wizard Tournament.          *"
@@ -68,7 +68,7 @@ public class StartProgramView extends View {
          *
          */
         if (playersName.length() < 2) {
-            System.out.println("\n Invalid players name: "
+            ErrorView.display(this.getClass().getName(),"\n Invalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
@@ -76,7 +76,7 @@ public class StartProgramView extends View {
         Player player = GameControl.createPlayer(playersName);
 
         if (player == null) {
-            System.out.println("\n Error creating the player.");
+            ErrorView.display(this.getClass().getName(),"\n Error creating the player.");
             return false;
         }
 
@@ -88,7 +88,7 @@ public class StartProgramView extends View {
     
 
     private void displayNextView(Player player) {
-        System.out.println("\n========================================="
+        this.console.println("\n========================================="
                          + "\n Welcome to the game " + player.getName()
                          + "\n We hope you have a lot of fun!"
                          + "\n=========================================");

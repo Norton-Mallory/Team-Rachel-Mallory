@@ -5,6 +5,7 @@
  */
 package byui.CIT260.Hogwarts.model;
 
+import byui.CIT260.Hogwarts.view.ErrorView;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class Map implements Serializable {
 
     public Map(int numberOfRows, int numberOfColumns) {
         if (numberOfRows < 1 || numberOfColumns < 1) {
-            System.out.println("The number of rows and columns must be > zero");
+            ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
             return;
         }
         this.numberOfRows = numberOfRows;

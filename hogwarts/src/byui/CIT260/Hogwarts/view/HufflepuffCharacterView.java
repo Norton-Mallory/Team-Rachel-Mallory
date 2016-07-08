@@ -59,7 +59,7 @@ class HufflepuffCharacterView extends View{
                 this.quit();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break; 
            
         }
@@ -68,43 +68,43 @@ class HufflepuffCharacterView extends View{
 
     private void cedricDiggory() {
         
-        System.out.println("\n Welcome to the Quad Wizard Tournament Cedric. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Cedric. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void zachariasSmith() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Zacharias. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Zacharias. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void justinFinchFletchley() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Justin. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Justin. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void hannahLongbottom() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Hannah. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Hannah. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void ernieMacmillan() {
-       System.out.println("\n Welcome to the Quad Wizard Tournament Ernie. Good Luck!");
+       this.console.println("\n Welcome to the Quad Wizard Tournament Ernie. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void susanBones() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Susan. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Susan. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void anthonyOtterburn() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Anthony. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Anthony. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

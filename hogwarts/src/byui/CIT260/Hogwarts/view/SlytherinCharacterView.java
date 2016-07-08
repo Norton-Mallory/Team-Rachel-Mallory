@@ -58,7 +58,7 @@ public class SlytherinCharacterView extends View {
                 this.quit();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break; 
            
         }
@@ -67,43 +67,43 @@ public class SlytherinCharacterView extends View {
 
     private void dracoMalfoy() {
         
-        System.out.println("\n Welcome to the Quad Wizard Tournament Draco. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Draco. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void gregoryGoyle() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Gregory. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Gregory. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void vincentCrabbe() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Vincent. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Vincent. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void terenceHiggs() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Terence. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Terence. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void marcusFlint() {
-       System.out.println("\n Welcome to the Quad Wizard Tournament Marcus. Good Luck!");
+       this.console.println("\n Welcome to the Quad Wizard Tournament Marcus. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void blaiseZabini() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Blaise. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Blaise. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void pansyParkinson() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Pansy. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Pansy. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

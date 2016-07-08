@@ -40,19 +40,14 @@ public class SecondTaskView extends View {
             double solution = Double.parseDouble(value);
             TaskControl.checkSolveForX(1, solution);
         } catch (NumberFormatException nfe) {
-            System.out.println("Letter is not a valid answer. ");
+            ErrorView.display(this.getClass().getName(),"Letter is not a valid answer. ");
             return false;
         } catch (TaskControlException tce) {
-            System.out.println(tce.getMessage());
+            ErrorView.display(this.getClass().getName(),tce.getMessage());
             return false;
         }
-        //if not between boundaries then 
-        //if (answer == false) {
-        //    System.out.println("\n Answer is incorrect. Try again.");
-        //    return false;
-        //}
-        //else {
-        System.out.println("\n Success! You made it past the mermaids"
+        
+        this.console.println("\n Success! You made it past the mermaids"
                 + "\n and rescued your friend.");
 
         GameMenuView gameMenu = new GameMenuView();

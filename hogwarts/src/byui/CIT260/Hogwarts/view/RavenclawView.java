@@ -54,7 +54,7 @@ public class RavenclawView extends View {
                 this.quit();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break; 
            
         }
@@ -63,37 +63,37 @@ public class RavenclawView extends View {
 
     private void lunaLovegood() {
         
-        System.out.println("\n Welcome to the Quad Wizard Tournament Luna. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Luna. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void choChang() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Cho. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Cho. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void rogerDavies() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Roger. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Roger. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void michaelCorner() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Michael. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Michael. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void padmaPatil() {
-       System.out.println("\n Welcome to the Quad Wizard Tournament Padma. Good Luck!");
+       this.console.println("\n Welcome to the Quad Wizard Tournament Padma. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void terryBoot() {
-        System.out.println("\n Welcome to the Quad Wizard Tournament Terry. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Terry. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

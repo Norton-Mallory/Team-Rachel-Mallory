@@ -89,6 +89,17 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);
     }
 
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    } 
+    
     public static Item[] createItemList() {
         //create an array of items
 

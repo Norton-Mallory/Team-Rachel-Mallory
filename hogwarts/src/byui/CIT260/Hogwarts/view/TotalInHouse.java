@@ -38,25 +38,25 @@ public class TotalInHouse extends View {
         switch (value) {
             case "G":
                 int totalGryffindor = GameControl.totalInHouse(characterList, House.Gryffindor);
-                System.out.println("\n ***********************************************"
+                this.console.println("\n ***********************************************"
                         + "\n There are " + totalGryffindor + " characters in the Gryffindor House."
                         + "\n ***********************************************");
                 break;
             case "H":
                 int totalHufflepuff = GameControl.totalInHouse(characterList, House.Hufflepuff);
-                System.out.println("\n ***********************************************"
+                this.console.println("\n ***********************************************"
                         + "\n There are " + totalHufflepuff + " characters in the Hufflepuff House."
                         + "\n ***********************************************");
                 break;
             case "R":
                 int totalRavenclaw = GameControl.totalInHouse(characterList, House.Ravenclaw);
-                System.out.println("\n ***********************************************"
+                this.console.println("\n ***********************************************"
                         + "\n There are " + totalRavenclaw + " characters in the Ravenclaw House."
                         + "\n ***********************************************");
                 break;
             case "S":
                 int totalSlytherin = GameControl.totalInHouse(characterList, House.Slytherin);
-                System.out.println("\n ***********************************************"
+                this.console.println("\n ***********************************************"
                         + "\n There are " + totalSlytherin + " characters in the Slytherin House."
                         + "\n ***********************************************");
                 break;
@@ -64,7 +64,7 @@ public class TotalInHouse extends View {
                 this.quit();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

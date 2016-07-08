@@ -51,7 +51,7 @@ public class MainMenuView extends View {
                 this.exit();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -61,7 +61,7 @@ public class MainMenuView extends View {
         try {
             GameControl.createNewGame(Hogwarts.getPlayer());
         } catch (MapControlException mce) {
-            System.out.println(mce.getMessage());
+            ErrorView.display(this.getClass().getName(),mce.getMessage());
         }
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.display();
@@ -69,7 +69,7 @@ public class MainMenuView extends View {
     }
 
     private void restartExistingGame() {
-        System.out.println("*** restartExistingGame function called ***");
+        this.console.println("*** restartExistingGame function called ***");
     }
 
     private void helpMenu() {
@@ -78,11 +78,19 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        this.console.println("Enter the file path where you would like to "
+                            + "save the game");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(Hogwarts.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void exit() {
-        System.out.println("*** exit function called ***");
+        this.console.println("*** exit function called ***");
     }
 
 
