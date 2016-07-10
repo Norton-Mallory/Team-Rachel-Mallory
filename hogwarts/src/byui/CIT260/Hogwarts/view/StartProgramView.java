@@ -6,6 +6,7 @@
 package byui.CIT260.Hogwarts.view;
 
 import byui.CIT260.Hogwarts.control.GameControl;
+import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Player;
 import java.util.Scanner;
 
@@ -14,7 +15,6 @@ import java.util.Scanner;
  * @author Mallory
  */
 public class StartProgramView extends View {
-
 
     public StartProgramView() {
         super("\nPlease enter your name:");
@@ -58,43 +58,37 @@ public class StartProgramView extends View {
     @Override
     public boolean doAction(String playersName) {
 
-        /**
-         * doAction(playersName): boolean BEGIN if the length of the playersName < 2 then
-         * display “Invalid name: The name must be > 1 character” return false
-         *
-         * create Player with specified name if unsuccessful then display
-         * “Invalid name: The name is too short” return false display customized
-         * welcome message display mainMenuView return true END
-         *
-         */
         if (playersName.length() < 2) {
             ErrorView.display(this.getClass().getName(),"\n Invalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
 
-        Player player = GameControl.createPlayer(playersName);
+        try {
+            Player player = GameControl.createPlayer(playersName);
 
-        if (player == null) {
-            ErrorView.display(this.getClass().getName(),"\n Error creating the player.");
+            //this.displayNextView(player);
+            this.console.println("\n========================================="
+                    + "\n Welcome to the game " + player.getName()
+                    + "\n We hope you have a lot of fun!"
+                    + "\n=========================================");
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
+            return true;
+        } catch (GameControlException gce) {
+            ErrorView.display(this.getClass().getName(), gce.getMessage());
+            ErrorView.display(this.getClass().getName(), "\n Error creating the player.");
             return false;
         }
 
-        this.displayNextView(player);
-        return true;
-        
-
+        // private void displayNextView(Player player) {
+        //System.out.println("\n========================================="
+        //               + "\n Welcome to the game " + player.getName()
+        //             + "\n We hope you have a lot of fun!"
+        //            + "\n=========================================");
+        //MainMenuView mainMenuView = new MainMenuView();
+        //  mainMenuView.display();
     }
-    
 
-    private void displayNextView(Player player) {
-        this.console.println("\n========================================="
-                         + "\n Welcome to the game " + player.getName()
-                         + "\n We hope you have a lot of fun!"
-                         + "\n=========================================");
-        MainMenuView mainMenuView = new MainMenuView();
-        
-        mainMenuView.display();
-    }
-   
 }
+

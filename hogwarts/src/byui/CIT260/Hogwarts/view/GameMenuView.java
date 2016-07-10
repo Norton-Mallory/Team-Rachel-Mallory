@@ -7,6 +7,7 @@
 package byui.CIT260.Hogwarts.view;
 
 import byui.CIT260.Hogwarts.control.GameControl;
+import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Item;
 import byui.CIT260.Hogwarts.model.Location;
@@ -18,31 +19,33 @@ import hogwarts.Hogwarts;
  * @author Mallory
  */
 public class GameMenuView extends View {
-    
+
     public GameMenuView() {
-       super(    "\n-------------------------------------------"
-               + "\n | Game Menu                             | "
-               + "\n-------------------------------------------"
-               + "\n 1 - View map"
-               + "\n 2 - First task"
-               + "\n 3 - Second task"
-               + "\n 4 - Third task"
-               + "\n 5 - Move to new location"
-               + "\n 6 - View number of coins collected"
-               + "\n 7 - View list of items needed"
-               + "\n 8 - Total items"
-               + "\n 9 - Find how many characters in a house"
-               + "\n 10 - Number of coins needed"
-               + "\n 11 - Save game"
-               + "\n 12 - Help"
-               + "\n 13 - Quit"
-               + "\n-------------------------------------------"
-               + "\n Please enter a valid value");
+        super("\n-------------------------------------------"
+                + "\n | Game Menu                             | "
+                + "\n-------------------------------------------"
+                + "\n 1 - View map"
+                + "\n 2 - First task"
+                + "\n 3 - Second task"
+                + "\n 4 - Third task"
+                + "\n 5 - Move to new location"
+                + "\n 6 - View number of coins collected"
+                + "\n 7 - View list of items needed"
+                + "\n 8 - Total items"
+                + "\n 9 - Find how many characters in a house"
+                + "\n 10 - Number of coins needed"
+                + "\n 11 - Save game"
+                + "\n 12 - Help"
+                + "\n 13 - Quit"
+                + "\n-------------------------------------------"
+                + "\n Please enter a valid value");
     }
-    
+
     @Override
+
     public boolean doAction(String gameMenuOption) {
-        switch(gameMenuOption){
+
+        switch (gameMenuOption) {
             case "1":
                 this.viewMap();
                 break;
@@ -65,16 +68,16 @@ public class GameMenuView extends View {
                 this.viewListOfItems();
                 break;
             case "8":
-                 this.totalItems();
-                 break;
+                this.totalItems();
+                break;
             case "9":
-                 this.totalInHouse();
-                 break;
+                this.totalInHouse();
+                break;
             case "10":
                 this.numberOfCoinsNeeded();
                 break;
-            case "11":
-                this.saveGame();
+           // case "11":
+           //     this.saveGame();
             case "12":
                 this.help();
                 break;
@@ -90,7 +93,7 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-       
+
         Game game = Hogwarts.getCurrentGame();
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
@@ -107,7 +110,6 @@ public class GameMenuView extends View {
                 Location location = locations[row][column];
                 this.console.print(location.getScene().getMapSymbol());
 
-          
             }
             this.console.println(" | ");
         }
@@ -140,7 +142,7 @@ public class GameMenuView extends View {
 
     private void viewListOfItems() {
         StringBuilder line;
-        
+
         Game game = Hogwarts.getCurrentGame();
         Item[] items = game.getItems();
         
@@ -152,7 +154,7 @@ public class GameMenuView extends View {
         this.console.println(line.toString());
         
         for (Item itemEnum : items) {
-            line = new StringBuilder ("                          ");
+            line = new StringBuilder("                          ");
             line.insert(0, itemEnum.getInventoryType());
             line.insert(23, itemEnum.getQuantityInStock());
             line.insert(33, itemEnum.getRequiredAmount());
@@ -160,23 +162,23 @@ public class GameMenuView extends View {
             
             this.console.println(line.toString());
         }
-        
-        
+
     }
 
     private void numberOfCoinsNeeded() {
-     NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
+        NumberOfCoinsNeeded numberOfCoinsNeeded = new NumberOfCoinsNeeded();
         numberOfCoinsNeeded.display();
     }
-    
-    private void totalInHouse() {
+
+    private void totalInHouse()  {
         TotalInHouse totalInHouse = new TotalInHouse();
         totalInHouse.display();
+
     }
 
-    private void saveGame() {
-        this.console.println("\n*** saveGame() function called  ***");
-    }
+   // private void saveGame() {
+   //     this.console.println("\n*** saveGame() function called  ***");
+   // }
 
     private void help() {
         HelpMenuView helpMenu = new HelpMenuView();
@@ -188,19 +190,20 @@ public class GameMenuView extends View {
         mainMenu.display();
     }
 
-
     private void totalItems() {
-        Game game = Hogwarts.getCurrentGame();
-        
-        Item[] item = game.getItems();
-        
-        int total = GameControl.totalItems(item);
-        this.console.println("\n There are  " + total + " items in the Item list");
+
+        try {
+            Game game = Hogwarts.getCurrentGame();
+
+            Item[] item = game.getItems();
+
+            int total = GameControl.totalItems(item);
+            this.console.println("\n There are  " + total + " items in the Item list");
+            
+        } catch (GameControlException gce) {
+            ErrorView.display(this.getClass().getName(), gce.getMessage());
+            ErrorView.display(this.getClass().getName(),"\n Invalid item please try again");
+        }
     }
 
-    
-
-   
-
-    
 }

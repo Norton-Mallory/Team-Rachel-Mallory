@@ -6,6 +6,7 @@
 package byui.CIT260.Hogwarts.view;
 
 import byui.CIT260.Hogwarts.control.GameControl;
+import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Character;
 import byui.CIT260.Hogwarts.model.House;
 
@@ -24,59 +25,61 @@ public class TotalInHouse extends View {
                 + "\n that house."
                 + "\n----------------------------------------------------------"
                 + "\n Enter a valid house:"
-                + "\n G - Gryffindor"
-                + "\n H - Hufflepuff"
-                + "\n R - Ravenclaw"
-                + "\n S - Slytherin"
-                + "\n Q - Quit");
+                + "\n 1 - Gryffindor"
+                + "\n 2 - Hufflepuff"
+                + "\n 3 - Ravenclaw"
+                + "\n 4 - Slytherin"
+                + "\n 5 - Quit");
     }
 
     @Override
     public boolean doAction(String value) {
-        Character[] characterList = Character.values();
 
-        switch (value) {
-            case "G":
-                int totalGryffindor = GameControl.totalInHouse(characterList, House.Gryffindor);
-                this.console.println("\n ***********************************************"
-                        + "\n There are " + totalGryffindor + " characters in the Gryffindor House."
-                        + "\n ***********************************************");
-                break;
-            case "H":
-                int totalHufflepuff = GameControl.totalInHouse(characterList, House.Hufflepuff);
-                this.console.println("\n ***********************************************"
-                        + "\n There are " + totalHufflepuff + " characters in the Hufflepuff House."
-                        + "\n ***********************************************");
-                break;
-            case "R":
-                int totalRavenclaw = GameControl.totalInHouse(characterList, House.Ravenclaw);
-                this.console.println("\n ***********************************************"
-                        + "\n There are " + totalRavenclaw + " characters in the Ravenclaw House."
-                        + "\n ***********************************************");
-                break;
-            case "S":
-                int totalSlytherin = GameControl.totalInHouse(characterList, House.Slytherin);
-                this.console.println("\n ***********************************************"
-                        + "\n There are " + totalSlytherin + " characters in the Slytherin House."
-                        + "\n ***********************************************");
-                break;
-            case "Q":
-                this.quit();
-                break;
-            default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
-                break;
+        Character[] characterList = Character.values();
+        try {
+            switch (value) {
+                case "1":
+                    int totalGryffindor = GameControl.totalInHouse(characterList, House.Gryffindor);
+                    this.console.println("\n ***********************************************"
+                            + "\n There are " + totalGryffindor + " characters in the Gryffindor House."
+                            + "\n ***********************************************");
+                    break;
+                case "2":
+                    int totalHufflepuff = GameControl.totalInHouse(characterList, House.Hufflepuff);
+                    this.console.println("\n ***********************************************"
+                            + "\n There are " + totalHufflepuff + " characters in the Hufflepuff House."
+                            + "\n ***********************************************");
+                    break;
+                case "3":
+                    int totalRavenclaw = GameControl.totalInHouse(characterList, House.Ravenclaw);
+                    this.console.println("\n ***********************************************"
+                            + "\n There are " + totalRavenclaw + " characters in the Ravenclaw House."
+                            + "\n ***********************************************");
+                    break;
+                case "4":
+                    int totalSlytherin = GameControl.totalInHouse(characterList, House.Slytherin);
+                    this.console.println("\n ***********************************************"
+                            + "\n There are " + totalSlytherin + " characters in the Slytherin House."
+                            + "\n ***********************************************");
+                    break;
+                case "5":
+                    this.quit();
+                    break;
+                default:
+                    this.console.println("\n*** Invalid selection *** Try again");
+                    break;
+            }
+        } catch (GameControlException gce) {
+            ErrorView.display(this.getClass().getName(), gce.getMessage());
+            return false;
         }
         return false;
-
-        // GameMenuView gameMenu = new GameMenuView();
-        // gameMenu.display();
-        // return true;
     }
 
     private void quit() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+
     }
 
 }

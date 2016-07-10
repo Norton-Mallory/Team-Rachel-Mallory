@@ -7,6 +7,7 @@ package byui.CIT260.Hogwarts.control;
 
 
 import byui.CIT260.Hogwarts.exceptions.MapControlException;
+import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.House;
 import byui.CIT260.Hogwarts.model.Item;
@@ -18,6 +19,10 @@ import byui.CIT260.Hogwarts.model.Scene;
 import byui.CIT260.Hogwarts.model.SceneType;
 import byui.CIT260.Hogwarts.model.Character;
 import hogwarts.Hogwarts;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -25,9 +30,9 @@ import hogwarts.Hogwarts;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) throws GameControlException {
         if (name == null) {
-            return null;
+            throw new GameControlException ("The name is null");
         }
         Player player = new Player();
         player.setName(name);
@@ -36,11 +41,11 @@ public class GameControl {
 
     }
 
-    public static int totalItems(Item[] items){
+    public static int totalItems(Item[] items) throws GameControlException {
         
         if(items.length > 6){
             
-            return -1;
+            throw new GameControlException ("The length is greater than 6");
         }
            
         int total = 0;  
@@ -55,12 +60,12 @@ public class GameControl {
     }
         
 
-    public static int totalInHouse(Character[] character, House house) {
+    public static int totalInHouse(Character[] character, House house) throws GameControlException {
         if (character == null) {
-            return -1;
+            throw new GameControlException ("The character is null");
         }
         if (character.length == 0) {
-            return 0;
+            throw new GameControlException ("The length cannot be equal to 0");
         }
         
         int total = 0;
@@ -89,7 +94,7 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);
     }
 
-    public static void saveGame(Game game, String filepath)
+    public static void saveGame(Game game, String filePath)
             throws GameControlException {
         try(FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
@@ -98,6 +103,21 @@ public class GameControl {
         } catch(Exception e) {
             throw new GameControlException(e.getMessage());
         }
+    } 
+    
+       public static void getRestartExistingGame(String filePath)
+            throws GameControlException {
+           Game game = null;
+           
+        try(FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        Hogwarts.setCurrentGame(game);
     } 
     
     public static Item[] createItemList() {
@@ -146,6 +166,7 @@ public class GameControl {
 
  
     static void assignItemsToLocations(Map map, Item[] items) {
+        
         Location[][] locations = map.getLocations();
 
 

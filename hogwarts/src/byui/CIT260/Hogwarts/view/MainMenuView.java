@@ -69,7 +69,9 @@ public class MainMenuView extends View {
     }
 
     private void restartExistingGame() {
-        this.console.println("*** restartExistingGame function called ***");
+        
+        RestartExistingGameView restartExistingGameMenu = new RestartExistingGameView();
+        restartExistingGameMenu.display();
     }
 
     private void helpMenu() {
@@ -78,15 +80,8 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("Enter the file path where you would like to "
-                            + "save the game");
-        String filePath = this.getInput();
-        
-        try {
-            GameControl.saveGame(Hogwarts.getCurrentGame(), filePath);
-        } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
-        }
+        SaveGameView saveGame = new SaveGameView();
+        saveGame.display();
     }
 
     private void exit() {
