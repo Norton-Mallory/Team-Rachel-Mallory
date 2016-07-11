@@ -22,10 +22,8 @@ public class SaveGameView extends View {
     @Override
     public boolean doAction(String value) {
         
-        String filePath = this.getInput();
-        
         try {
-            GameControl.saveGame(Hogwarts.getCurrentGame(), filePath);
+            GameControl.saveGame(Hogwarts.getCurrentGame(), value);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }

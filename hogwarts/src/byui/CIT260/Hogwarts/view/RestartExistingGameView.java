@@ -19,17 +19,16 @@ public class RestartExistingGameView extends View {
 
     @Override
     public boolean doAction(String value) {
-        
-        
-        String filePath = this.getInput();
-        
+
         try {
-            GameControl.getRestartExistingGame(filePath);
+            GameControl.getRestartExistingGame(value);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
-    } return true;
-    
-    
-    
-}
+        }
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+
+        return true;
+
+    }
 }
