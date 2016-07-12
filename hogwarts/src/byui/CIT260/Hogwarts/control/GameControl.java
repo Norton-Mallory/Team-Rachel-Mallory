@@ -5,7 +5,6 @@
  */
 package byui.CIT260.Hogwarts.control;
 
-
 import byui.CIT260.Hogwarts.exceptions.MapControlException;
 import byui.CIT260.Hogwarts.exceptions.GameControlException;
 import byui.CIT260.Hogwarts.model.Game;
@@ -32,54 +31,50 @@ public class GameControl {
 
     public static Player createPlayer(String name) throws GameControlException {
         if (name == null) {
-            throw new GameControlException ("The name is null");
+            throw new GameControlException("The name is null");
         }
         Player player = new Player();
         player.setName(name);
         return player;
-        
 
     }
 
     public static int totalItems(Item[] items) throws GameControlException {
-        
-        if(items.length > 6){
-            
-            throw new GameControlException ("The length is greater than 6");
+
+        if (items.length > 6) {
+
+            throw new GameControlException("The length is greater than 6");
         }
-           
-        int total = 0;  
-        for (Item item : items){
-            
-            total +=  1;
-            
-           
+
+        int total = 0;
+        for (Item item : items) {
+
+            total += 1;
+
         }
-            
-         return total;
+
+        return total;
     }
-        
 
     public static int totalInHouse(Character[] character, House house) throws GameControlException {
         if (character == null) {
-            throw new GameControlException ("The character is null");
+            throw new GameControlException("The character is null");
         }
         if (character.length == 0) {
-            throw new GameControlException ("The length cannot be equal to 0");
+            throw new GameControlException("The length cannot be equal to 0");
         }
-        
+
         int total = 0;
         for (Character characters : character) {
             if (characters.getHouse() == house) {
                 total++;
             }
-            
+
         }
         return total;
     }
 
-
-    public static void createNewGame(Player player) throws MapControlException{
+    public static void createNewGame(Player player) throws MapControlException {
         Game game = new Game();
         Hogwarts.setCurrentGame(game);
 
@@ -96,30 +91,30 @@ public class GameControl {
 
     public static void saveGame(Game game, String filePath)
             throws GameControlException {
-        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
+
             output.writeObject(game);
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-    } 
-    
-       public static void getRestartExistingGame(String filePath)
+    }
+
+    public static void getRestartExistingGame(String filePath)
             throws GameControlException {
-           Game game = null;
-           
-        try(FileInputStream fips = new FileInputStream(filePath)) {
+        Game game = null;
+
+        try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
-            
+
             game = (Game) input.readObject();
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-        
+
         Hogwarts.setCurrentGame(game);
-    } 
-    
+    }
+
     public static Item[] createItemList() {
         //create an array of items
 
@@ -164,11 +159,9 @@ public class GameControl {
         return items;
     }
 
- 
     static void assignItemsToLocations(Map map, Item[] items) {
-        
-        Location[][] locations = map.getLocations();
 
+        Location[][] locations = map.getLocations();
 
         //start pointlocations[0][0].setScene(scenes[SceneType.mcgonagall_office.ordinal()]);
         locations[0][1].setItem(items[ItemEnum.broomstick.ordinal()]);
@@ -196,11 +189,16 @@ public class GameControl {
         locations[4][3].setItem(items[ItemEnum.coins.ordinal()]);
         locations[4][4].setItem(items[ItemEnum.coins.ordinal()]);
 
-        }
-        
-        
-
     }
-    
 
+    public static void itemLocation(String filePath) throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
 
+            output.writeObject(filePath);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+}
