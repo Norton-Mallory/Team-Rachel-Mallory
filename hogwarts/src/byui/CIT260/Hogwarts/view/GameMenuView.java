@@ -37,6 +37,7 @@ public class GameMenuView extends View {
                 + "\n 11 - Save game"
                 + "\n 12 - Help"
                 + "\n 13 - Quit"
+                + "\n 14 - List of scene locations"
                 + "\n-------------------------------------------"
                 + "\n Please enter a valid value");
     }
@@ -84,6 +85,8 @@ public class GameMenuView extends View {
             case "13":
                 this.quit();
                 break;
+            case "14":
+                this.listOfSceneLocations();
              default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break; 
@@ -141,12 +144,12 @@ public class GameMenuView extends View {
     }
 
     private void viewListOfItems() {
-        StringBuilder line;
+    StringBuilder line;
 
         Game game = Hogwarts.getCurrentGame();
         Item[] items = game.getItems();
         
-        this.console.println("\n     LIST OF INVENTORY ITEMS");
+        this.console("\n     LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                               ");
         line.insert(0, "INVENTORY TYPE");
         line.insert(20, "QUANTITY IN STOCK");
@@ -176,10 +179,6 @@ public class GameMenuView extends View {
 
     }
 
-   // private void saveGame() {
-   //     this.console.println("\n*** saveGame() function called  ***");
-   // }
-
     private void help() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
@@ -204,6 +203,13 @@ public class GameMenuView extends View {
             ErrorView.display(this.getClass().getName(), gce.getMessage());
             ErrorView.display(this.getClass().getName(),"\n Invalid item please try again");
         }
+    }
+
+    private void listOfSceneLocations() {
+        ListOfSceneLocations listOfSceneLocations = new ListOfSceneLocations();
+        listOfSceneLocations.display(); 
+        
+        
     }
 
 }
