@@ -64,7 +64,7 @@ public class MapControl {
         scenes[SceneType.girls_lavatory.ordinal()] = girlsLavatoryScene;
 
         Scene roomOfRequirementScene = new Scene();
-        roomOfRequirementScene.setDescription("The room of Requirement. Obtain what you need");
+        roomOfRequirementScene.setDescription("The room of Requirement");
         roomOfRequirementScene.setMapSymbol("ROR");
         roomOfRequirementScene.setBlocked(false);
         scenes[SceneType.room_of_requirement.ordinal()] = roomOfRequirementScene;

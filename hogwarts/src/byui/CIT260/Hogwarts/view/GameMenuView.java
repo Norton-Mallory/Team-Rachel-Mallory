@@ -36,8 +36,8 @@ public class GameMenuView extends View {
                 + "\n 10 - Number of coins needed"
                 + "\n 11 - Help"
                 + "\n 12 - Quit"
-                + "\n 13 - Report of Item locations"
-                + "\n 14 - List of scene locations"
+                + "\n 13 - Report of Scene locations"
+                + "\n 14 - Report of Item locations"
                 + "\n-------------------------------------------"
                 + "\n Please enter a valid value");
     }

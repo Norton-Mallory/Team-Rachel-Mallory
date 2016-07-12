@@ -26,6 +26,7 @@ public class ItemLocationList extends View {
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+        this.console.println("\n Successfully printed list.");
         return true;
     }
 
