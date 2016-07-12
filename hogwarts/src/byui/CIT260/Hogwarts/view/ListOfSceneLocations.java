@@ -22,12 +22,13 @@ public class ListOfSceneLocations extends View {
     }
 
     @Override
-    public boolean doAction(String value) {
+    public boolean doAction(String filePath) {
 
         try {
-            GameControl.listOfSceneLocations(value);
+            GameControl.listOfSceneLocations(filePath);
+            this.console.println("\n You have successfully saved the report!");
         } catch (GameControlException gce) {
-            ErrorView.display(this.getClass().getName(), gce.getMessage());
+            ErrorView.display("GameMenuView", gce.getMessage());
         }
         return true;
     }

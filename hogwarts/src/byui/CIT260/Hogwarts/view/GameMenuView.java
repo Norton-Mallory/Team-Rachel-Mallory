@@ -34,9 +34,9 @@ public class GameMenuView extends View {
                 + "\n 8 - Total items"
                 + "\n 9 - Find how many characters in a house"
                 + "\n 10 - Number of coins needed"
-                + "\n 11 - Save game"
-                + "\n 12 - Help"
-                + "\n 13 - Quit"
+                + "\n 11 - Help"
+                + "\n 12 - Quit"
+                + "\n 13 - Report of Item locations"
                 + "\n 14 - List of scene locations"
                 + "\n-------------------------------------------"
                 + "\n Please enter a valid value");
@@ -77,20 +77,22 @@ public class GameMenuView extends View {
             case "10":
                 this.numberOfCoinsNeeded();
                 break;
-           // case "11":
-           //     this.saveGame();
-            case "12":
+            case "11":
                 this.help();
                 break;
-            case "13":
+            case "12":
                 this.quit();
                 break;
-            case "14":
+            case "13":
                 this.listOfSceneLocations();
-             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
-                break; 
-           
+                break;
+            case "14":
+                this.itemLocation();
+                break;
+            default:
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                break;
+
         }
         return false;
     }
@@ -100,10 +102,10 @@ public class GameMenuView extends View {
         Game game = Hogwarts.getCurrentGame();
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
-        
+
         this.console.println("-----------Hogwarts Map-------------");
-        this.console.print(  "1     2      3      4      5");
-        
+        this.console.print("1     2      3      4      5");
+
         for (int row = 0; row < map.getNumberOfRows(); row++) {
             this.console.println("\n-----------------------------");
             this.console.println(row);
@@ -144,25 +146,23 @@ public class GameMenuView extends View {
     }
 
     private void viewListOfItems() {
-    StringBuilder line;
+        StringBuilder line;
 
         Game game = Hogwarts.getCurrentGame();
         Item[] items = game.getItems();
-        
-        this.console("\n     LIST OF INVENTORY ITEMS");
+        this.console.println("\n     LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                               ");
         line.insert(0, "INVENTORY TYPE");
         line.insert(20, "QUANTITY IN STOCK");
         line.insert(40, "REQUIRED AMOUNT");
         this.console.println(line.toString());
-        
+
         for (Item itemEnum : items) {
             line = new StringBuilder("                          ");
             line.insert(0, itemEnum.getInventoryType());
             line.insert(23, itemEnum.getQuantityInStock());
             line.insert(33, itemEnum.getRequiredAmount());
-            
-            
+
             this.console.println(line.toString());
         }
 
@@ -173,7 +173,7 @@ public class GameMenuView extends View {
         numberOfCoinsNeeded.display();
     }
 
-    private void totalInHouse()  {
+    private void totalInHouse() {
         TotalInHouse totalInHouse = new TotalInHouse();
         totalInHouse.display();
 
@@ -198,18 +198,24 @@ public class GameMenuView extends View {
 
             int total = GameControl.totalItems(item);
             this.console.println("\n There are  " + total + " items in the Item list");
-            
+
         } catch (GameControlException gce) {
             ErrorView.display(this.getClass().getName(), gce.getMessage());
-            ErrorView.display(this.getClass().getName(),"\n Invalid item please try again");
+            ErrorView.display(this.getClass().getName(), "\n Invalid item please try again");
         }
     }
 
+    // private void saveGame() {
+    //     this.console.println("\n*** saveGame() function called  ***");
+    // }
+
     private void listOfSceneLocations() {
         ListOfSceneLocations listOfSceneLocations = new ListOfSceneLocations();
-        listOfSceneLocations.display(); 
-        
-        
+        listOfSceneLocations.display();
     }
 
+    private void itemLocation() {
+       ItemLocationList itemLocation = new ItemLocationList();
+       itemLocation.display();
+    }
 }

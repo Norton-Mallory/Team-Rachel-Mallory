@@ -22,6 +22,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
@@ -103,13 +104,7 @@ public class GameControl {
     public static void getRestartExistingGame(String filePath)
             throws GameControlException {
         Game game = null;
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
 
-            output.writeObject(game);
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
         try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
 
@@ -119,16 +114,6 @@ public class GameControl {
         }
 
         Hogwarts.setCurrentGame(game);
-    }
-
-    public static void listOfSceneLocations(String filePath) throws GameControlException {
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(filePath);
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
     }
 
     public static Item[] createItemList() {
@@ -207,4 +192,29 @@ public class GameControl {
 
     }
 
+    public static void itemLocation(String filePath) throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(filePath);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void listOfSceneLocations(String filePath) throws GameControlException {
+        try (PrintWriter out = new PrintWriter(filePath)) {
+
+            out.println("\n\n    Locations Report           ");
+            out.printf("%n%-20%10s", "Location", "Scene Description");
+            out.printf("%n%-20%10s", "--------", "-----------------");
+
+            for (Scene SceneType : Scenes) {
+                out.printf(scene.getMapSymbol(), scene.getDescription());
+
+            }
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
 }
