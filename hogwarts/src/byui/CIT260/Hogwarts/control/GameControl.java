@@ -89,7 +89,47 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);
     }
 
-  
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(game);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getRestartExistingGame(String filePath)
+            throws GameControlException {
+        Game game = null;
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(game);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject();
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
+        Hogwarts.setCurrentGame(game);
+    }
+
+    public static void listOfSceneLocations(String filePath) throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(filePath);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
 
     public static Item[] createItemList() {
         //create an array of items
