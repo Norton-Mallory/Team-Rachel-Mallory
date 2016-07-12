@@ -209,9 +209,12 @@ public class GameMenuView extends View {
     }
 
     private void itemLocation() {
-        ItemLocationList itemLocation = new ItemLocationList();
-        itemLocation.display();
-
+        try {
+            ItemLocationList itemLocation = new ItemLocationList();
+            itemLocation.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), e.getMessage());
+        }
     }
 
 }
