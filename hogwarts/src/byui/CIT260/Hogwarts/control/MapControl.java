@@ -7,10 +7,14 @@ package byui.CIT260.Hogwarts.control;
 
 import static byui.CIT260.Hogwarts.control.MapControl.createScenes;
 import byui.CIT260.Hogwarts.exceptions.MapControlException;
+import byui.CIT260.Hogwarts.model.Game;
 import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
+import byui.CIT260.Hogwarts.model.Player;
 import byui.CIT260.Hogwarts.model.Scene;
 import byui.CIT260.Hogwarts.model.SceneType;
+import hogwarts.Hogwarts;
+import java.awt.Point;
 
 /**
  *
@@ -130,7 +134,7 @@ public class MapControl {
         scenes[SceneType.green_houses.ordinal()] = greenHousesScene;
 
         Scene hagridsHutScene = new Scene();
-        hagridsHutScene.setDescription("Hafrids Hut");
+        hagridsHutScene.setDescription("Hagrids Hut");
         hagridsHutScene.setMapSymbol("HH");
         hagridsHutScene.setBlocked(false);
         scenes[SceneType.hagrids_hut.ordinal()] = hagridsHutScene;
@@ -209,12 +213,16 @@ public class MapControl {
         locations[4][4].setScene(scenes[SceneType.garden.ordinal()]);
 
     }
+   
 
     static void moveActorsToStartingLocation(Map map) throws MapControlException {
        
         if (map == null) {
             throw new MapControlException("Invalid map");
         } else  System.out.println("\n *** moveActors() function called ***");
+        //get character
+        
+        //add character to list in [0][0] location
     }
 
 }

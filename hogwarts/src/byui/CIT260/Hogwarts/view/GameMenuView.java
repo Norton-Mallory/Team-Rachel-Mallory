@@ -137,7 +137,8 @@ public class GameMenuView extends View {
     }
 
     private void moveToNewLocation() {
-        this.console.println("\n*** moveToNewLocation() function called  ***");
+        MoveToNewLocation moveToNewLocation = new MoveToNewLocation();
+        moveToNewLocation.display();
     }
 
     private void viewNumberOfCoinsCollected() {
