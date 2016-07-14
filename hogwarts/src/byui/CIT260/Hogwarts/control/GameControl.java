@@ -14,8 +14,6 @@ import byui.CIT260.Hogwarts.model.ItemEnum;
 import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
-import byui.CIT260.Hogwarts.model.Scene;
-import byui.CIT260.Hogwarts.model.SceneType;
 import byui.CIT260.Hogwarts.model.Character;
 import hogwarts.Hogwarts;
 import java.io.FileInputStream;

@@ -9,8 +9,13 @@ import static byui.CIT260.Hogwarts.control.MapControl.createScenes;
 import byui.CIT260.Hogwarts.exceptions.MapControlException;
 import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
+import byui.CIT260.Hogwarts.model.Character;
 import byui.CIT260.Hogwarts.model.Scene;
 import byui.CIT260.Hogwarts.model.SceneType;
+import hogwarts.Hogwarts;
+import java.awt.Point;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -211,10 +216,39 @@ public class MapControl {
     }
 
     static void moveActorsToStartingLocation(Map map) throws MapControlException {
-       
+
         if (map == null) {
             throw new MapControlException("Invalid map");
-        } else  System.out.println("\n *** moveActors() function called ***");
+        } else {
+            System.out.println("\n *** moveActors() function called ***");
+        }
     }
 
+    static void moveCharacter(Character character, Point coordinates) throws MapControlException {
+        if (character == null || coordinates == null) {
+            throw new MapControlException("Character cannot be null");
+        }        
+        
+        Point currentCoordinates = character.getCoordinates();
+        Location[][] locations = Hogwarts.getCurrentGame().getMap().getLocations();
+
+        int row = currentCoordinates.x;
+        int column = currentCoordinates.y;
+        
+        Location current = locations[row][column];
+        
+        
+        current.getCharacters().remove(character);
+        
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
+        
+        Location newLocation = locations[newRow][newColumn];
+        
+        newLocation.getCharacters().add(character);
+        
+        currentCoordinates.x = newRow;
+        currentCoordinates.y = newColumn;
+        
+    }
 }
