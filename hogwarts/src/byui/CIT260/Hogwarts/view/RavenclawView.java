@@ -6,7 +6,8 @@
 package byui.CIT260.Hogwarts.view;
 
 import java.util.Scanner;
-
+import byui.CIT260.Hogwarts.model.Character;
+import hogwarts.Hogwarts;
 /**
  *
  * @author Mallory
@@ -62,37 +63,42 @@ public class RavenclawView extends View {
     }
 
     private void lunaLovegood() {
-        
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Luna_Lovegood);
         this.console.println("\n Welcome to the Quad Wizard Tournament Luna. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void choChang() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Cho_Chang);
         this.console.println("\n Welcome to the Quad Wizard Tournament Cho. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void rogerDavies() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Roger_Davies);
         this.console.println("\n Welcome to the Quad Wizard Tournament Roger. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void michaelCorner() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Michael_Corner);
         this.console.println("\n Welcome to the Quad Wizard Tournament Michael. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void padmaPatil() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Padma_Patil);
        this.console.println("\n Welcome to the Quad Wizard Tournament Padma. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void terryBoot() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Terry_Boot);
         this.console.println("\n Welcome to the Quad Wizard Tournament Terry. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

@@ -6,7 +6,8 @@
 package byui.CIT260.Hogwarts.view;
 
 import java.util.Scanner;
-
+import byui.CIT260.Hogwarts.model.Character;
+import hogwarts.Hogwarts;
 /**
  *
  * @author Mallory
@@ -66,43 +67,49 @@ public class SlytherinCharacterView extends View {
     }
 
     private void dracoMalfoy() {
-        
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Draco_Malfoy);
         this.console.println("\n Welcome to the Quad Wizard Tournament Draco. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void gregoryGoyle() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Gregory_Goyle);
         this.console.println("\n Welcome to the Quad Wizard Tournament Gregory. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void vincentCrabbe() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Vincent_Crabbe);
         this.console.println("\n Welcome to the Quad Wizard Tournament Vincent. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void terenceHiggs() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Terence_Higgs);
         this.console.println("\n Welcome to the Quad Wizard Tournament Terence. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void marcusFlint() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Marcus_Flint);
        this.console.println("\n Welcome to the Quad Wizard Tournament Marcus. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void blaiseZabini() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Blaise_Zabini);
         this.console.println("\n Welcome to the Quad Wizard Tournament Blaise. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void pansyParkinson() {
+        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Pansy_Parkinson);
         this.console.println("\n Welcome to the Quad Wizard Tournament Pansy. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
