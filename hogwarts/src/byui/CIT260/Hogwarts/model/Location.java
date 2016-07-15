@@ -68,6 +68,16 @@ public class Location implements Serializable{
         this.scene = scene;
     }
 
+    public ArrayList<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(ArrayList<Character> characters) {
+        this.characters = characters;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 7;

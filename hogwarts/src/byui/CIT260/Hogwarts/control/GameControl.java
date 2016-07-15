@@ -14,8 +14,6 @@ import byui.CIT260.Hogwarts.model.ItemEnum;
 import byui.CIT260.Hogwarts.model.Location;
 import byui.CIT260.Hogwarts.model.Map;
 import byui.CIT260.Hogwarts.model.Player;
-import byui.CIT260.Hogwarts.model.Scene;
-import byui.CIT260.Hogwarts.model.SceneType;
 import byui.CIT260.Hogwarts.model.Character;
 import hogwarts.Hogwarts;
 import java.io.FileInputStream;
@@ -79,18 +77,20 @@ public class GameControl {
         Game game = new Game();
         Hogwarts.setCurrentGame(game);
 
-        game.setPlayer(player);
-
+        game.setPlayer(player);        
+      
         Item[] itemList = GameControl.createItemList();
         game.setItems(itemList);
 
         Map map = MapControl.createMap();
         game.setMap(map);
-        
+
         GameControl.assignItemsToLocations(map, itemList);
 
         MapControl.moveActorsToStartingLocation(map);
     }
+
+    
 
     public static void saveGame(Game game, String filePath)
             throws GameControlException {
@@ -201,23 +201,22 @@ public class GameControl {
             pws.println("\n             Item List                ");
             pws.printf("%n%-20s%10s%10s", "Item", "row", "column");
             pws.printf("%n%-20s%10s%10s", "--------", "----", "----");
-            
+
             Location[][] locations = Hogwarts.getCurrentGame().getMap().getLocations();
-            
+
             for (int i = 0; i < locations.length; i++) {
- 
+
                 for (int j = 0; j < locations[i].length; j++) {
-                    
-                    Location location  = locations[i][j];
+
+                    Location location = locations[i][j];
                     String itemType = location.getItem().getInventoryType();
-                    
+
                     pws.printf("%n%-20s%10s%10s", itemType, i, j);
                 }
-                
+
             }
-            
-                    
-                    //filePath);
+
+            //filePath);
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
@@ -225,23 +224,23 @@ public class GameControl {
 
     public static void listOfSceneLocations(String filePath) throws GameControlException {
         try (PrintWriter out = new PrintWriter(filePath)) {
-           
+
             out.println("\n\n                   Scene Report           ");
             out.printf("%n%-30s%10s%10s", "Scene", "row", "column");
             out.printf("%n%-30s%10s%10s", "--------", "------", "--------");
- 
+
             Location[][] locations = Hogwarts.getCurrentGame().getMap().getLocations();
-            
-               for (int i = 0; i < locations.length; i++) {
- 
+
+            for (int i = 0; i < locations.length; i++) {
+
                 for (int j = 0; j < locations[i].length; j++) {
-                    
-                    Location location  = locations[i][j];
+
+                    Location location = locations[i][j];
                     String sceneType = location.getScene().getDescription();
-                    
+
                     out.printf("%n%-30s%10s%10s", sceneType, i, j);
                 }
-                
+
             }
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());

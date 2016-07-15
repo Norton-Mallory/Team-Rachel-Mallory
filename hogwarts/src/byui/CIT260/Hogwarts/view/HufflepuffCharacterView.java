@@ -5,6 +5,7 @@
  */
 package byui.CIT260.Hogwarts.view;
 
+import hogwarts.Hogwarts;
 import java.util.Scanner;
 
 /**
@@ -67,13 +68,14 @@ class HufflepuffCharacterView extends View{
     }
 
     private void cedricDiggory() {
-        
+   
         this.console.println("\n Welcome to the Quad Wizard Tournament Cedric. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void zachariasSmith() {
+      
         this.console.println("\n Welcome to the Quad Wizard Tournament Zacharias. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

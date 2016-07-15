@@ -39,10 +39,16 @@ public enum SymbolEnum implements Serializable  {
     D(new Point (4,3)),
     G(new Point (4,4));
     
- 
-    SymbolEnum(){
-    
+    private final Point coordinates;
+   
+    SymbolEnum(Point coordinates){
+        this.coordinates = coordinates;
     }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+    
 }
 
       

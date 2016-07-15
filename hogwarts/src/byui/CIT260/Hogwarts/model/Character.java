@@ -8,7 +8,6 @@ package byui.CIT260.Hogwarts.model;
 import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  *
@@ -45,6 +44,7 @@ public enum Character implements Serializable{
     Blaise_Zabini("member of the Slytherin House", House.Slytherin),
     Pansy_Parkinson("member of the Slytherin House", House.Slytherin);
     
+    
     private final String description;
     private final Point coordinates;
     private final House house;
@@ -72,6 +72,7 @@ public enum Character implements Serializable{
     public ArrayList<Item> getItems() {
         return items;
     }
+
    
     
     
