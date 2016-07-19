@@ -117,6 +117,8 @@ public class MoveToNewLocation extends View {
 
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
 
     }
 
@@ -132,10 +134,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void cos() {
-       Point coordinates = SymbolEnum.COS.getCoordinates();
+        Point coordinates = SymbolEnum.COS.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -146,10 +150,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void grh() {
-       Point coordinates = SymbolEnum.GrH.getCoordinates();
+        Point coordinates = SymbolEnum.GrH.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -160,6 +166,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void bl() {
@@ -174,10 +182,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void cl() {
-       Point coordinates = SymbolEnum.CL.getCoordinates();
+        Point coordinates = SymbolEnum.CL.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -188,6 +198,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void s() {
@@ -202,10 +214,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void l() {
-       Point coordinates = SymbolEnum.L.getCoordinates();
+        Point coordinates = SymbolEnum.L.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -216,10 +230,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void hh() {
-       Point coordinates = SymbolEnum.HH.getCoordinates();
+        Point coordinates = SymbolEnum.HH.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -230,6 +246,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void ff() {
@@ -244,6 +262,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void pdo() {
@@ -258,6 +278,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void h() {
@@ -272,10 +294,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void gh() {
-       Point coordinates = SymbolEnum.GH.getCoordinates();
+        Point coordinates = SymbolEnum.GH.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -286,10 +310,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void qf() {
-       Point coordinates = SymbolEnum.QF.getCoordinates();
+        Point coordinates = SymbolEnum.QF.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -300,10 +326,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void gl() {
-       Point coordinates = SymbolEnum.GL.getCoordinates();
+        Point coordinates = SymbolEnum.GL.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -314,10 +342,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void hw() {
-      Point coordinates = SymbolEnum.HW.getCoordinates();
+        Point coordinates = SymbolEnum.HW.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -328,10 +358,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void fw() {
-      Point coordinates = SymbolEnum.FW.getCoordinates();
+        Point coordinates = SymbolEnum.FW.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -342,6 +374,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void ror() {
@@ -356,6 +390,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void pso() {
@@ -370,6 +406,8 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void sd() {
@@ -384,10 +422,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void d() {
-       Point coordinates = SymbolEnum.D.getCoordinates();
+        Point coordinates = SymbolEnum.D.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -398,10 +438,12 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void g() {
-       Point coordinates = SymbolEnum.G.getCoordinates();
+        Point coordinates = SymbolEnum.G.getCoordinates();
 
         Character character = Hogwarts.getCurrentGame().getPlayer().getCharacter();
 
@@ -412,5 +454,7 @@ public class MoveToNewLocation extends View {
         }
         //print out success message
         this.console.println("\n You have successfully moved to a new location!");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 }

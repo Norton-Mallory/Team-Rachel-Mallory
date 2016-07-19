@@ -8,6 +8,7 @@ package byui.CIT260.Hogwarts.view;
 import java.util.Scanner;
 import byui.CIT260.Hogwarts.model.Character;
 import hogwarts.Hogwarts;
+
 /**
  *
  * @author Mallory
@@ -15,25 +16,25 @@ import hogwarts.Hogwarts;
 public class SlytherinCharacterView extends View {
 
     public SlytherinCharacterView() {
-        super(             "\n---------------------------"
-                          +"\n |    Slytherin Menu     | "
-                          +"\n---------------------------"
-                          +"\n 1 - Draco Malfoy"
-                          +"\n 2 - Gregory Goyle"
-                          +"\n 3 - Vincent Crabbe"
-                          +"\n 4 - Terence Higgs"
-                          +"\n 5 - Marcus Flint"
-                          +"\n 6 - Blaise Zabini"
-                          +"\n 7 - Pansy Parkinson"
-                          +"\n 8 - Quit"
-                          +"\n---------------------------"
-                          +"\n Please enter a valid value");
+        super("\n---------------------------"
+                + "\n |    Slytherin Menu     | "
+                + "\n---------------------------"
+                + "\n 1 - Draco Malfoy"
+                + "\n 2 - Gregory Goyle"
+                + "\n 3 - Vincent Crabbe"
+                + "\n 4 - Terence Higgs"
+                + "\n 5 - Marcus Flint"
+                + "\n 6 - Blaise Zabini"
+                + "\n 7 - Pansy Parkinson"
+                + "\n 8 - Quit"
+                + "\n---------------------------"
+                + "\n Please enter a valid value");
     }
-    
+
     @Override
-     public boolean doAction(String slytherinCharacterOption) {
-      
-        switch(slytherinCharacterOption){
+    public boolean doAction(String slytherinCharacterOption) {
+
+        switch (slytherinCharacterOption) {
             case "1":
                 this.dracoMalfoy();
                 break;
@@ -59,9 +60,9 @@ public class SlytherinCharacterView extends View {
                 this.quit();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
-                break; 
-           
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                break;
+
         }
         return false;
     }
@@ -96,7 +97,7 @@ public class SlytherinCharacterView extends View {
 
     private void marcusFlint() {
         Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Marcus_Flint);
-       this.console.println("\n Welcome to the Quad Wizard Tournament Marcus. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Marcus. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
@@ -115,9 +116,9 @@ public class SlytherinCharacterView extends View {
         gameMenu.display();
     }
 
-     private void quit() {
+    private void quit() {
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.display();
     }
-    
+
 }

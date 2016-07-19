@@ -8,35 +8,36 @@ package byui.CIT260.Hogwarts.view;
 import hogwarts.Hogwarts;
 import java.util.Scanner;
 import byui.CIT260.Hogwarts.model.Character;
+import byui.CIT260.Hogwarts.model.Player;
 import byui.CIT260.Hogwarts.model.SymbolEnum;
 import java.awt.Point;
+
 /**
  *
  * @author Mallory
  */
 public class GryffindorCharacterView extends View {
-  
 
     public GryffindorCharacterView() {
-        super (            "\n---------------------------"
-                          +"\n |   Gryffindor Menu     |"
-                          +"\n---------------------------"
-                          +"\n 1 - Harry Potter"
-                          +"\n 2 - Ron Weasley"
-                          +"\n 3 - Hermione Granger"
-                          +"\n 4 - Ginny Weasley"
-                          +"\n 5 - Neville Longbottom"
-                          +"\n 6 - Fred Weasley"
-                          +"\n 7 - George Weasley"
-                          +"\n 8 - Quit"
-                          +"\n---------------------------"
-                          +"\n Please enter a valid value");
+        super("\n---------------------------"
+                + "\n |   Gryffindor Menu     |"
+                + "\n---------------------------"
+                + "\n 1 - Harry Potter"
+                + "\n 2 - Ron Weasley"
+                + "\n 3 - Hermione Granger"
+                + "\n 4 - Ginny Weasley"
+                + "\n 5 - Neville Longbottom"
+                + "\n 6 - Fred Weasley"
+                + "\n 7 - George Weasley"
+                + "\n 8 - Quit"
+                + "\n---------------------------"
+                + "\n Please enter a valid value");
     }
-    
+
     @Override
     public boolean doAction(String gryffindorCharacterOption) {
-      
-        switch(gryffindorCharacterOption){
+
+        switch (gryffindorCharacterOption) {
             case "1":
                 this.harryPotter();
                 break;
@@ -62,17 +63,18 @@ public class GryffindorCharacterView extends View {
                 this.quit();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
-                break; 
-           
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                break;
+
         }
         return false;
     }
 
     private void harryPotter() {
-       
-        Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Harry);  
-       
+
+        Player player = Hogwarts.getCurrentGame().getPlayer();
+        player.setCharacter(Character.Harry);
+
         this.console.println("\n Welcome to the Quad Wizard Tournament Harry. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
@@ -101,7 +103,7 @@ public class GryffindorCharacterView extends View {
 
     private void nevilleLongbottom() {
         Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Neville);
-       this.console.println("\n Welcome to the Quad Wizard Tournament Neville. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Neville. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
@@ -124,8 +126,5 @@ public class GryffindorCharacterView extends View {
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.display();
     }
-
-    
-    
 
 }

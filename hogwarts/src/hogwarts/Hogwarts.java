@@ -23,10 +23,9 @@ public class Hogwarts {
 
     private static Game currentGame = null;
     private static Player player = null;
-
     private static PrintWriter outFile = null;
     private static BufferedReader InFile = null;
-    
+
     private static PrintWriter logFile = null;
 
     /**
@@ -41,28 +40,30 @@ public class Hogwarts {
 
             String filePath = "log.txt";
             Hogwarts.logFile = new PrintWriter(filePath);
-            
+
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
         } catch (Throwable te) {
-            System.out.println("Exception: " + te.toString() +
-                    "\nCause: " + te.getCause() +
-                    "\nMessage: " + te.getMessage());
-                    
+            System.out.println("Exception: " + te.toString()
+                    + "\nCause: " + te.getCause()
+                    + "\nMessage: " + te.getMessage());
+
             te.printStackTrace();
 
         } finally {
             try {
-                if (Hogwarts.InFile != null) 
+                if (Hogwarts.InFile != null) {
                     Hogwarts.InFile.close();
-                
+                }
 
-                if (Hogwarts.outFile != null) 
+                if (Hogwarts.outFile != null) {
                     Hogwarts.outFile.close();
-                
-                if (Hogwarts.logFile != null)
+                }
+
+                if (Hogwarts.logFile != null) {
                     Hogwarts.logFile.close();
-                
+                }
+
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
@@ -111,6 +112,7 @@ public class Hogwarts {
     public static void setLogFile(PrintWriter logFile) {
         Hogwarts.logFile = logFile;
     }
+    
     
 
     public static Game getCreateMap() {

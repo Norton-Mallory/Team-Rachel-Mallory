@@ -22,7 +22,8 @@ public class Location implements Serializable{
    
     private Item item;
     private Scene scene;
-    private ArrayList<Character> characters;
+    private ArrayList<Character> characters = new ArrayList<>();
+    
 
     public Location() {
     }

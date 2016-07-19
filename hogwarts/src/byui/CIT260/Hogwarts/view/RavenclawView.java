@@ -8,31 +8,32 @@ package byui.CIT260.Hogwarts.view;
 import java.util.Scanner;
 import byui.CIT260.Hogwarts.model.Character;
 import hogwarts.Hogwarts;
+
 /**
  *
  * @author Mallory
  */
 public class RavenclawView extends View {
-  
+
     public RavenclawView() {
-        super(             "\n----------------------------"
-                          +"\n |    Ravenclaw Menu     | "
-                          +"\n----------------------------"
-                          +"\n 1 - Luna Lovegood"
-                          +"\n 2 - Cho Chang"
-                          +"\n 3 - Roger Davies"
-                          +"\n 4 - Michael Corner"
-                          +"\n 5 - Padma Patil"
-                          +"\n 6 - Terry Boot"
-                          +"\n 7 - Quit"
-                          +"\n----------------------------"
-                         + "\n Please enter a valid value");
+        super("\n----------------------------"
+                + "\n |    Ravenclaw Menu     | "
+                + "\n----------------------------"
+                + "\n 1 - Luna Lovegood"
+                + "\n 2 - Cho Chang"
+                + "\n 3 - Roger Davies"
+                + "\n 4 - Michael Corner"
+                + "\n 5 - Padma Patil"
+                + "\n 6 - Terry Boot"
+                + "\n 7 - Quit"
+                + "\n----------------------------"
+                + "\n Please enter a valid value");
     }
-     
+
     @Override
     public boolean doAction(String ravenclawCharacterOption) {
-      
-        switch(ravenclawCharacterOption){
+
+        switch (ravenclawCharacterOption) {
             case "1":
                 this.lunaLovegood();
                 break;
@@ -55,9 +56,9 @@ public class RavenclawView extends View {
                 this.quit();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
-                break; 
-           
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                break;
+
         }
         return false;
     }
@@ -92,7 +93,7 @@ public class RavenclawView extends View {
 
     private void padmaPatil() {
         Hogwarts.getCurrentGame().getPlayer().setCharacter(Character.Padma_Patil);
-       this.console.println("\n Welcome to the Quad Wizard Tournament Padma. Good Luck!");
+        this.console.println("\n Welcome to the Quad Wizard Tournament Padma. Good Luck!");
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
@@ -103,9 +104,10 @@ public class RavenclawView extends View {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
+
     private void quit() {
         HouseMenuView houseMenu = new HouseMenuView();
         houseMenu.display();
     }
-   
+
 }

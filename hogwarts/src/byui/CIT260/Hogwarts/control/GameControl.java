@@ -21,6 +21,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
@@ -34,6 +35,7 @@ public class GameControl {
         }
         Player player = new Player();
         player.setName(name);
+        Hogwarts.setPlayer(player);
         return player;
 
     }
@@ -77,8 +79,8 @@ public class GameControl {
         Game game = new Game();
         Hogwarts.setCurrentGame(game);
 
-        game.setPlayer(player);        
-      
+        game.setPlayer(player);
+
         Item[] itemList = GameControl.createItemList();
         game.setItems(itemList);
 
@@ -89,8 +91,6 @@ public class GameControl {
 
         MapControl.moveActorsToStartingLocation(map);
     }
-
-    
 
     public static void saveGame(Game game, String filePath)
             throws GameControlException {
@@ -245,5 +245,39 @@ public class GameControl {
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
+    }
+
+    public ArrayList<Character> assignCharacterToLocation() {
+        ArrayList<Character> location = new ArrayList<>();
+
+        location.add(Character.Harry);
+        location.add(Character.Ron);
+        location.add(Character.Hermione);
+        location.add(Character.Ginny);
+        location.add(Character.Neville);
+        location.add(Character.Fred);
+        location.add(Character.George);
+        location.add(Character.Cedric_Diggory);
+        location.add(Character.Zacharias_Smith);
+        location.add(Character.Justin_Finch_Fletchley);
+        location.add(Character.Hannah_Longbottom);
+        location.add(Character.Ernie_Macmillan);
+        location.add(Character.Susan_Bones);
+        location.add(Character.Anthony_Otterburn);
+        location.add(Character.Luna_Lovegood);
+        location.add(Character.Cho_Chang);
+        location.add(Character.Roger_Davies);
+        location.add(Character.Michael_Corner);
+        location.add(Character.Padma_Patil);
+        location.add(Character.Terry_Boot);
+        location.add(Character.Draco_Malfoy);
+        location.add(Character.Gregory_Goyle);
+        location.add(Character.Vincent_Crabbe);
+        location.add(Character.Terence_Higgs);
+        location.add(Character.Marcus_Flint);
+        location.add(Character.Blaise_Zabini);
+        location.add(Character.Pansy_Parkinson);
+        return location;
+
     }
 }
